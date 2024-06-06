@@ -1,1 +1,1 @@
-https://phylu.gitee.io Repository for Jinsheng Lu's academic research website.
+https://jinslu.github.io Repository for Jinsheng Lu's academic research website.
