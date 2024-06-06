@@ -1,0 +1,29 @@
+I"<h3>Problem description</h3>
+<p>When you use <a href="https://github.com/pcooksey/bibtex-js">bibtex-js</a> to generate the publication list in your website as the instruction given by the author, you will find it requires two js files obtained in an online way:<br /></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">&lt;script type="text/javascript" src="https://cdn.jsdelivr.net/gh/pcooksey/bibtex-js@1.0.0/src/bibtex_js.min.js"&gt;&lt;/script&gt;</code></li>
+  <li><code class="language-plaintext highlighter-rouge">jq.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'</code></li>
+</ul>
+
+<p>The first file (bibtex_js.min.js) is required in your publication.md which is used to generate the pulication list page in your website. In the meantime, the the second file (jquery.min.js) is required inside the first file. 
+As you can see, if you access the second file in an online way, you will need a VPN to access the googleapis first. If you are in China, it will be a problem to visit google.</p>
+
+<h3>The solution</h3>
+<p>It requires two steps (please download the two files,bibtex_js.min.js and jquery.min.js, and put them in your publication folder):</p>
+
+<ol>
+  <li>In your publication.md, change
+<br />
+<code class="language-plaintext highlighter-rouge">&lt;script type="text/javascript" src="https://cdn.jsdelivr.net/gh/pcooksey/bibtex-js@1.0.0/src/bibtex_js.min.js"&gt;&lt;/script&gt;</code>
+<br />
+to be
+<br />
+<code class="language-plaintext highlighter-rouge">&lt;script type="text/javascript" async src="/publications/bibtex_js.min.js"&gt;&lt;/script&gt;</code></li>
+  <li>In the bibtex_js.min.js file, change <br />
+<code class="language-plaintext highlighter-rouge">jq.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'</code>
+<br />
+to be 
+<br />
+<code class="language-plaintext highlighter-rouge">jq.src = 'jquery.min.js'</code></li>
+</ol>
+:ET

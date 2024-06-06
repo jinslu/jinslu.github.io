@@ -1,0 +1,329 @@
+I"y5<h1>Step 1: Github or Gitee</h1>
+
+<h3 id="1-create-an-account">1. Create an account</h3>
+<p>First, you need to have a <a href="https://github.com/">Github</a> or <a href="https://gitee.com/">Gitee</a> account, and your website will be deployed on it. Gitee is a something like a China version of Github. Their functions are almost the same. But if your website is deployed on Github, it will be very slow to visit your website or sometimes your website cannot be accessed in China. It will be a good choice to use Gitee if you hope your website can be accessed in a easy and convenient way in China. Don’t worry, you can also access your website deployed on Gitee in other countries (e.g. U.S.A). If you do not have an github or gitee account yet, you can try to choose a good user name for your account when you creating it, because your website url name will be related to your user name and be something like “https://username.github.io”.</p>
+
+<h3 id="2-create-an-repository">2. Create an repository</h3>
+<p>After you have a Github or Gitee account and log in, new repository first (taking Github for example).</p>
+
+<p style="margin:0;text-align:center"><img src="github_newrepo_1.png" alt="github_newrepo_1" style="width:30%" /></p>
+<p>Then you will need to input your repository name. I strongly suggest you give the repository name (e.g. jinslu) the same as your user name (e.g. jinslu). Choose “private” if you do not want your repository (i.e. your source files) to be found on the Internet by others. Click “create repository”.</p>
+
+<p style="margin:0;text-align:center"><img src="github_newrepo_2.png" alt="github_newrepo_2" style="width:50%" /></p>
+
+<h3 id="3-upload-files-to-you-repository">3. Upload files to you repository</h3>
+<p>You can use <a href="https://git-scm.com/downloads">Git tool</a> and command line shown below to upload files (html, css, jave scripts, images, pdfs, and so on) from your computer to your new repository or use web-based Github file uploade interface in the Github to do it. You can also find a lot of tutorials (e.g. <a href="https://www.khanacademy.org/computing/computer-programming/html-css/web-development-tools/a/hosting-your-website-on-github">khan academy</a>) on the internet to show you creat a Github account and repository.</p>
+<p style="margin:0;text-align:center"><img src="github_newrepo_3.png" alt="github_newrepo_3" style="width:100%" /></p>
+
+<h3 id="4-github-page">4. Github page</h3>
+<p>Previously, you need to turn on the Github page in your repository. It seems now you just need to add “.github.io” to your repository name to have this function. After that, your repository name will be something like “jinslu.github.io”.</p>
+
+<h3 id="5-use-templates-to-build-your-website">5. Use templates to build your website</h3>
+<p>There are a lot of nice personal website template on the Github. Here are some examples:</p>
+<ul>
+  <li><a href="https://github.com/ys1998/academic-portfolio">Github repository 1</a>: https://github.com/ys1998/academic-portfolio</li>
+  <li><a href="https://ys1998.github.io/academic-portfolio/">Personal website 1</a>: https://ys1998.github.io/academic-portfolio/</li>
+  <li><a href="https://github.com/academicpages/academicpages.github.io">Github repository 2</a>: https://github.com/academicpages/academicpages.github.io</li>
+  <li><a href="https://academicpages.github.io/publications/">Personal website 2</a>: https://academicpages.github.io/publications/</li>
+  <li><a href="https://github.com/qzhang95/qzhang95.github.io">Github repository 3</a>: https://github.com/qzhang95/qzhang95.github.io</li>
+  <li><a href="https://qzhang95.github.io/">Personal website 3</a>: https://qzhang95.github.io/</li>
+  <li><a href="https://jekyllthemes.io/github-pages-themes">Github Page theme with jekyll</a>: https://jekyllthemes.io/github-pages-themes</li>
+</ul>
+
+<h1>Step 2: jekyll</h1>
+<h3 id="1-jekyll-installation-on-mac">1. jekyll installation on Mac</h3>
+<p>It is very easy to install jekyll on Macbook. Just open terminal and input:<code class="language-plaintext highlighter-rouge">sudo  gem install jekyll</code></p>
+
+<h3 id="2-jekyll-usage">2. jekyll usage</h3>
+<ul>
+  <li>If there is no jekyll project on your computer, open terminal and create one <code class="language-plaintext highlighter-rouge">jekyll new project_name</code></li>
+  <li>You can download the jekyll project from <a href="https://jekyllthemes.io/github-pages-themes">Github Page theme with jekyll</a> as shown in above, open terminal and cd to the project folder. Input command <code class="language-plaintext highlighter-rouge">jekyll server</code> and it is without error if you see these messages as shown below:</li>
+</ul>
+<p style="margin:0;text-align:center"><img src="jekyll_server_message.png" alt="jekyll_server_message" style="width:50%" /></p>
+<ul>
+  <li>Open your browser and use http://127.0.0.1:4000 as your url. You can preview the website in this way.</li>
+  <li>Try to change the content of the files in the project, for example, change the index.html file, to see what will be changed in the website (http://127.0.0.1:4000). You can understand the html, css, java scripts, and markdown by this way little by little.</li>
+</ul>
+
+<h1>Step 3: bibtex-js: generate your publication list automatically</h1>
+
+<p>You can install the bibtex-js on your website from this <a href="https://github.com/pcooksey/bibtex-js">Github project</a>: https://github.com/pcooksey/bibtex-js
+Here is my modified html scripts (the content in between the “—” are for markdown, if you use html, please delete this part and start from “&lt;script type=”):</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: page
+permalink: /publications/
+title: Publications
+---
+
+&lt;script type="text/javascript" async src="https://cdn.jsdelivr.net/gh/pcooksey/bibtex-js@1.0.0/src/bibtex_js.min.js"&gt;&lt;/script&gt;
+
+&lt;bibtex src="/publications/jinsheng.bib"&gt;&lt;/bibtex&gt;
+
+&lt;div class="bibtex_structure"&gt;
+  &lt;div class="group year" extra="DESC number"&gt;
+      &lt;div style="padding-bottom:10px;"&gt;&lt;/div&gt;
+      &lt;div class="sort journal" extra="DESC string"&gt;
+        &lt;div class="templates"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="bibtex_display"&gt;
+  &lt;div class="bibtex_template"&gt;
+    &lt;ul&gt;&lt;li&gt;
+      &lt;div class="if title"&gt;
+        &lt;a class="url"&gt;&lt;strong&gt;&lt;span class="title"&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class="if author"&gt;
+        &lt;span class="author"&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;span class="if journal"&gt;&lt;em&gt;&lt;span class="journal"&gt;&lt;/span&gt;&lt;/em&gt;,&lt;/span&gt;
+      &lt;span class="if booktitle"&gt;&lt;em&gt;&lt;span class="booktitle"&gt;&lt;/span&gt;&lt;/em&gt;,&lt;/span&gt;
+      &lt;span class="if volume"&gt;vol. &lt;span class="volume"&gt;&lt;/span&gt;,&lt;/span&gt;
+      &lt;span class="if journal number"&gt;(&lt;span class="number"&gt;&lt;/span&gt;),&lt;/span&gt;
+      &lt;span class="if pages"&gt; pp. &lt;span class="pages"&gt;&lt;/span&gt;,&lt;/span&gt;
+      &lt;span class="if year"&gt;&lt;span class="year"&gt;&lt;/span&gt;.&lt;/span&gt;
+      &lt;span class="if editorsuggestion"&gt;Editors' Suggestion.&lt;/span&gt;
+      &lt;span class="if cover"&gt;
+        &lt;a class="cover"&gt;Cover Paper.&lt;/a&gt;
+      &lt;/span&gt;
+      &lt;span class="if news"&gt;
+        &lt;a class="news"&gt;Featured News.&lt;/a&gt;
+      &lt;/span&gt;
+      &lt;span class="if file"&gt;
+        &lt;a class="file"&gt;
+          &lt;div class="color-button"&gt;PDF&lt;/div&gt;
+        &lt;/a&gt;
+      &lt;/span&gt; 
+      &lt;p style="margin:0"&gt;   
+        &lt;button class="accordion"&gt;Abstract&lt;/button&gt;  
+        &lt;div class="panel" style="background-color: #f5f5f5;text-align: justify;"&gt;
+        &lt;span class="if abstract"&gt;
+            &lt;span class="abstract"&gt;&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/p&gt;       
+      &lt;script&gt; 
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i &lt; acc.length; i++) {
+            acc[i].onclick = function(){
+                this.classList.toggle("active");
+                this.parentNode.nextElementSibling.classList.toggle("show");
+          }
+        }
+      &lt;/script&gt;
+    &lt;/li&gt;&lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div></div>
+<p>You can download my <a href="/publications/jinsheng.bib">bib file</a> here.</p>
+
+<h1>Step 4: automatical images slider in your home page</h1>
+<p>You can use this script to automatically switch between multiple images in your home page.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: default
+---
+
+&lt;!--
+&lt;p style="margin:0;text-align:center;"&gt;&lt;img src="/projects/cover_2017PRL.png" onmouseover="imagefun()" id="getImage" style="width:100%"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function imagefun() {
+    var Image_Id = document.getElementById('getImage');
+    if (Image_Id.src.match("/projects/cover_2017PRL.png")) {
+        Image_Id.src = "/projects/newscover_2019SA.png";
+    }
+    else {
+        Image_Id.src = "/projects/cover_2017PRL.png";
+    }
+}        
+&lt;/script&gt;
+--&gt;
+
+&lt;html lang="en"&gt;
+
+&lt;style&gt;
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .pic1{
+        width: 100%;
+        height: auto;
+        
+    }
+&lt;/style&gt;
+
+&lt;!-- ------------- CSS Ends here --&gt;
+&lt;body&gt;
+
+    &lt;!-- Slider Code --&gt;
+    &lt;div class="slider"&gt;
+        &lt;img src="/projects/cover_2017PRL.png" alt="light-induced pulling and pushing" class="pic1"&gt;
+        &lt;img src="/projects/newscover_2019SA.png" alt="Optical motors" class="pic1"&gt;
+        &lt;img src="/projects/onchipopticaltweezers.png" alt="On-chip optical tweezers" class="pic1"&gt;
+    &lt;/div&gt;
+
+
+&lt;/body&gt;
+    &lt;script&gt;
+        var index=0;
+        Carousel();
+        function Carousel()
+        {
+            var i;
+
+            var x = document.getElementsByClassName('pic1');
+            for(i=0; i&lt;x.length; i++)
+            {
+                if(i==index)
+                {
+                    x[i].style.display = "block";
+                }
+                else{
+                    x[i].style.display = "none";
+                }
+            }
+            index++;
+            if(index&gt;=x.length)
+            {
+                index = 0;
+            }
+            setTimeout(Carousel,3000);
+        }
+
+    &lt;/script&gt;
+
+&lt;/html&gt; 
+</code></pre></div></div>
+<p>or use <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow_auto">this script</a>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: default
+---
+
+&lt;html&gt;
+
+&lt;style&gt;
+
+.mySlides {display: none;}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  /*top: 0;*/
+  bottom: 0;
+}
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 2s;
+  animation-name: fade;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+&lt;/style&gt;
+
+
+&lt;body&gt;
+
+&lt;div class="slideshow-container"&gt;
+
+&lt;div class="mySlides fade"&gt;
+  &lt;!--&lt;div class="numbertext"&gt;1 / 3&lt;/div&gt;--&gt;
+  &lt;img src="/projects/cover_2017PRL.png" style="width:100%"&gt;
+  &lt;div class="text"&gt;Light-induced pulling and pushing&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="mySlides fade"&gt;
+  &lt;!--&lt;div class="numbertext"&gt;2 / 3&lt;/div&gt;--&gt;
+  &lt;img src="/projects/newscover_2019SA.png" style="width:100%"&gt;
+  &lt;div class="text"&gt;Optical motor in the dry adhesive regime&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="mySlides fade"&gt;
+  &lt;!--&lt;div class="numbertext"&gt;3 / 3&lt;/div&gt;--&gt;
+  &lt;img src="/projects/onchipopticaltweezers.png" style="width:100%"&gt;
+  &lt;div class="text"&gt;On-chip optical tweezer based on freeform optics&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div style="text-align:center"&gt;
+  &lt;span class="dot"&gt;&lt;/span&gt; 
+  &lt;span class="dot"&gt;&lt;/span&gt; 
+  &lt;span class="dot"&gt;&lt;/span&gt; 
+&lt;/div&gt;
+
+&lt;script&gt;
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i &lt; slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex &gt; slides.length) {slideIndex = 1}    
+  for (i = 0; i &lt; dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 4000);
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; 
+</code></pre></div></div>
+:ET

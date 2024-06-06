@@ -1,0 +1,65 @@
+I"Ó<script type="text/javascript" async="" src="/publications/bibtex_js.min.js"></script>
+
+<bibtex src="/publications/jinsheng.bib"></bibtex>
+
+<p style="text-align: right">(â€ : these authors contribute equally)</p>
+
+<div class="bibtex_structure">
+  <div class="group year" extra="DESC number">
+      <div style="padding-bottom:10px;"></div>
+      <div class="sort journal" extra="DESC date">
+        <div class="templates"></div>
+      </div>
+  </div>
+</div>
+
+<div id="bibtex_display">
+  <div class="bibtex_template">
+    <ul><li>
+      <div class="if title">
+        <a class="url"><strong><span class="title"></span></strong></a>
+      </div>
+      <div class="if author">
+        <span class="author"></span>
+      </div>
+      <span class="if journal"><em><span class="journal"></span></em>,</span>
+      <span class="if booktitle"><em><span class="booktitle"></span></em>,</span>
+      <span class="if volume">vol. <span class="volume"></span> </span>
+      <span class="if number">(<span class="number"></span>),</span>
+      <span class="if pages"> pp. <span class="pages"></span>,</span>
+      <span class="if year"><span class="year"></span>.</span>
+      <span class="if editorsuggestion">Editors' Suggestion.</span>
+      <span class="if cover">
+        <a class="cover">Cover Paper.</a>
+      </span>
+      <span class="if news">
+        <a class="news">Featured News.</a>
+      </span>
+      <span class="if file">
+        <a class="file">
+          <div class="color-button">PDF</div>
+        </a>
+      </span> 
+      <span class="if doi"> DOI: <span class="doi"></span></span>
+      <p style="margin:0">   
+        <button class="accordion">Abstract</button>  
+        <div class="panel" style="background-color: #f5f5f5;text-align: justify;">
+        <span class="if abstract">
+            <span class="abstract"></span>
+        </span>
+        </div>
+      </p>       
+      <script> 
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+            acc[i].onclick = function(){
+                this.classList.toggle("active");
+                this.parentNode.nextElementSibling.classList.toggle("show");
+          }
+        }
+      </script>
+    </li></ul>
+  </div>
+</div>
+:ET

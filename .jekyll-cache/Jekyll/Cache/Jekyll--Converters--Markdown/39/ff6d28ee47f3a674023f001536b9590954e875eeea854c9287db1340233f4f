@@ -1,0 +1,71 @@
+I"ž$<h2>1. Set the colormap of the colorbar</h2>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">% use the colormap provided by Matlab</span>
+<span class="nb">colormap</span><span class="p">(</span><span class="nb">jet</span><span class="p">);</span> <span class="c1">%jet, parula, hsv, hot, etc.</span>
+</code></pre></div></div>
+
+<p style="margin:0;text-align:center"><img src="matlabcolormaplist.png" alt="" style="width:50%" /></p>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">%use a custom colormap</span>
+<span class="nb">load</span><span class="p">(</span><span class="s1">'RGB_Vincent.mat'</span><span class="p">);</span>
+<span class="n">rgbvincent</span> <span class="o">=</span> <span class="nb">flipud</span><span class="p">(</span><span class="n">RGBVincent</span><span class="p">);</span>
+<span class="nb">colormap</span><span class="p">(</span><span class="n">rgbvincent</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>You can generate or download some custom colormaps beyond the colormaps provided by Matlab in the following online sources.</p>
+<ul>
+  <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/68239-pycolormap4matlab">PyColormap4Matlab</a></li>
+  <li><a href="https://jdherman.github.io/colormap/">jdherman github</a></li>
+  <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/69470-custom-colormap">Custom Colormap</a></li>
+</ul>
+
+<h2>2. Use colormap for the 1-D line or point plots</h2>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">% use a colormap</span>
+<span class="nb">jet</span> <span class="o">=</span> <span class="nb">colormap</span><span class="p">(</span><span class="nb">jet</span><span class="p">);</span>
+<span class="n">line_number</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="k">for</span> <span class="n">ii</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">line_number</span>
+	<span class="n">xx</span> <span class="o">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="mi">100</span><span class="p">);</span>
+	<span class="n">yy</span> <span class="o">=</span> <span class="nb">sin</span><span class="p">(</span><span class="n">xx</span><span class="o">-</span><span class="nb">pi</span><span class="o">*</span><span class="p">(</span><span class="n">ii</span><span class="o">-</span><span class="mi">1</span><span class="p">)/(</span><span class="n">line_number</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span>
+	<span class="nb">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span><span class="s1">'color'</span><span class="p">,</span><span class="nb">jet</span><span class="p">(</span><span class="nb">floor</span><span class="p">(</span><span class="n">ii</span><span class="o">*</span><span class="mi">256</span><span class="p">/</span><span class="n">line_number</span><span class="p">),:),</span><span class="s1">'linewidth'</span><span class="p">,</span><span class="mf">1.5</span><span class="p">);</span>
+	<span class="nb">hold</span> <span class="n">on</span><span class="p">;</span>
+<span class="k">end</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s1">'x'</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s1">'sin(x+\phi)'</span><span class="p">);</span>
+<span class="nb">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]);</span>
+<span class="nb">colormap</span><span class="p">(</span><span class="nb">jet</span><span class="p">);</span>
+<span class="n">c</span> <span class="o">=</span> <span class="nb">colorbar</span><span class="p">;</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="nb">gca</span><span class="p">;</span>
+<span class="n">axpos</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">Position</span><span class="p">;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Position</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="mf">0.92</span><span class="p">;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Position</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">c</span><span class="o">.</span><span class="n">Position</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Title</span><span class="o">.</span><span class="n">String</span> <span class="o">=</span> <span class="s1">'\phi (rad)'</span><span class="p">;</span>
+<span class="nb">set</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="s1">'YTick'</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]);</span>
+<span class="nb">set</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="s1">'YTickLabel'</span><span class="p">,{</span><span class="s1">'0'</span><span class="p">,</span><span class="s1">'\pi'</span><span class="p">});</span>
+</code></pre></div></div>
+
+<p style="margin:0;text-align:center"><img src="lineplot_withcolormap.jpg" alt="" style="width:50%" /></p>
+
+<h2>3. Set the properties of the colorbar</h2>
+
+<h3>3.1 set the width and position</h3>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c</span> <span class="o">=</span> <span class="nb">colorbar</span><span class="p">;</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="nb">gca</span><span class="p">;</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">Position</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">=</span> <span class="mf">0.78</span><span class="p">;</span> <span class="c1">%change the width-to-height ration of the figure inside the windows</span>
+<span class="n">axpos</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">Position</span><span class="p">;</span> 
+<span class="n">c</span><span class="o">.</span><span class="n">Position</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="mf">0.9</span><span class="p">;</span> <span class="c1">% change the position of the colorbar</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Position</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">=</span> <span class="mf">0.3</span><span class="o">*</span><span class="n">c</span><span class="o">.</span><span class="n">Position</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="c1">%change the width of the colorbar</span>
+</code></pre></div></div>
+
+<h3>3.2 set the value range, label, and ticks</h3>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">caxis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]);</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Title</span><span class="o">.</span><span class="n">String</span> <span class="o">=</span> <span class="s1">'deg'</span><span class="p">;</span> <span class="c1">% c.Label.String = 'deg'; set label on the right</span>
+<span class="n">c</span><span class="o">.</span><span class="n">TickLength</span> <span class="o">=</span> <span class="mf">0.005</span><span class="p">;</span>
+<span class="nb">set</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="s1">'tickdir'</span><span class="p">,</span><span class="s1">'out'</span><span class="p">);</span>
+<span class="nb">set</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="s1">'YTick'</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">]);</span>
+<span class="nb">set</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="s1">'YTickLabel'</span><span class="p">,{</span><span class="s1">'0'</span><span class="p">,</span><span class="s1">'3'</span><span class="p">,</span><span class="s1">'6'</span><span class="p">});</span>
+</code></pre></div></div>
+
+:ET

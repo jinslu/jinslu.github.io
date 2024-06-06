@@ -1,0 +1,26 @@
+- title: "About Me"
+  href: "/aboutme/"
+
+- title: "Publications"
+  href: "/publications/"
+
+- title: "Projects"
+  href: "/projects/"
+
+- title: "CV"
+  href: "/cv/"
+
+- title: "Blog"
+  href: "/blog/"
+- title: "Useful Links"
+  href: "/usefullinks/"
+  subcategories:
+    - subtitle: "Journals"
+      subhref: "/usefullinks/journals/"
+    - subtitle: "Groups"
+      subhref: "/usefullinks/groups/"
+    - subtitle: "Instruments"
+      subhref: "/usefullinks/instruments/"
+    - subtitle: "One More Thing"
+      subhref: "/usefullinks/onemorething/"
+

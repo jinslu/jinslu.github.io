@@ -1,0 +1,7 @@
+I"v<h3>Problem description</h3>
+<p>When you use <a href="https://github.com/pcooksey/bibtex-js">bibtex-js</a> to generate the publication list in your website as the instruction given by the author, you will find it requires two js files obtained in an online way:<br /></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">&lt;script type="text/javascript" src="https://cdn.jsdelivr.net/gh/pcooksey/bibtex-js@1.0.0/src/bibtex_js.min.js"&gt;&lt;/script&gt;</code></li>
+  <li><code class="language-plaintext highlighter-rouge">jq.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'</code></li>
+</ul>
+:ET

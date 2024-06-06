@@ -1,0 +1,62 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+//$base-font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+//$base-font-family: noticia text,serif;
+$base-font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+//$base-font-size:   .97em;
+$base-font-size:   1.05em;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.4;
+
+$spacing-unit:     30px;
+
+//$text-color:       #2b2b2b;
+$text-color:       #000000;
+$background-color: #fdfdfd;
+$brand-color:      #0077CC;
+
+$blue-color-dark: darken(#3E7AD1, 10%);
+$blue-color-light: #4B93DB;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+$header-color:       #3A75B0;
+$header-color-light: lighten($header-color, 40%);
+$header-color-dark:  darken($header-color, 0%);
+
+$gmail-logo-fill-color: #5c7aaf;
+$google-scholar-logo-fill-color1: #4285f4;
+$google-scholar-logo-fill-color2: #b43b2c;
+$google-scholar-logo-fill-color3: #cc2729;
+$google-scholar-logo-fill-color4: #febf10;
+$google-scholar-logo-fill-color5: #6eb37d;
+$linkedin-logo-fill-color: #0077B7;
+$orcid-logo-fill-color: #a3c846;
+$publons-logo-fill-color: #316392;
+$researchgate-logo-fill-color: #339177;
+// Width of the content area
+$content-width:    950px;
+
+$on-palm:          600px;
+$on-laptop:        950px;
+
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+    "header",
+	"mobile-header",
+    "base",
+    "layout",
+    "syntax-highlighting",
+	"image"
+;

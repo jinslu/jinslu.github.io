@@ -1,0 +1,13 @@
+# Site settings
+title: Jinsheng Lu's website
+general_email: jinsheng1897@gmail.com
+
+# Build settings
+markdown: kramdown
+
+kramdown:
+  math_engine: mathjax
+
+# Other options
+permalink: blog/:year/:month/:title
+#permalink: blogimages

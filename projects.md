@@ -1,0 +1,51 @@
+---
+layout: page
+permalink: /projects/
+title: Research Projects
+---
+
+<ol>
+  <h1><li>Optical manipulations in dry environments</li></h1>
+  <p style = "text-align: justify">
+  Most optical manipulations are achieved in liquid environments where the strong adhesion between the manipulated object and the surface it contacts with is removed with the help of liquids. We are aiming to achieve light-induced motions in dry environments, especially when the actuated part contacts with its supporting part and are tightly held on the support by the strong adhesion at the microscale. In this case, the light-actuated motions can be very precisely and stably controlled (with subnanometer resolution). Applications include micro-optomechanical systems, outer-space optical precision mechanics and controls, etc.
+  </p>
+  <!--
+  <div class="row">
+    <div class="column">
+      <p style="margin:0;text-align:right;font-size: 14px;color: gray;">Light-induced pulling and pushing</p>
+      <p style="margin:0;text-align:right;"><img src="cover_2017PRL.png" alt="2017PRL" style="width:80%"></p>
+    </div>
+    <div class="column">
+      <p style="margin:0;text-align:left;font-size: 14px;color: gray;">Light-actuated motors</p>
+      <p style="margin:0;text-align:left;"><img src="newscover_2019SA.png" alt="2019SA" style="width:80%"></p>
+    </div>
+  </div>
+  -->
+  <div class="row">
+    <div class="column">
+      <p style="margin:0;text-align:right;"><img src="pulling_and_pushing_reduced.gif" alt="opticalpullingpushing" style="width:80%"></p>
+    </div>
+    <div class="column">
+      <p style="margin:0;text-align:left;"><img src="opticalmotor_reduced.gif" alt="opticalmotor" style="width:80%"></p>
+    </div>
+  </div>
+ <figcaption>Caption: Optical microscope videos showing light-induced pulling and pushing of a gold plate on a microfiber in the air (left) and light-induced rotation of a gold plate around a microfiber in the air (right). The gold plate keeps being attached to the microfiber during the light actuation process. The light is guided in the microfiber.</figcaption>
+  
+  <p style="margin:0;text-align:center;"><img src="SEM22_reduced.gif" alt="spiralmotion1" style="width:65%"></p>
+  <p style="margin:0;text-align:center;"><img src="SEM11_reduced.gif" alt="spiralmotion1" style="width:65%"></p>
+  <p style="margin:0;text-align:center;"><img src="SEM33_reduced.gif" alt="spiralmotion1" style="width:65%"></p>
+<figcaption>Caption: SEM videos showing a 30-nm-thick microplate's motions including rotating (top), spiraling to the right (middle), and spiraling to the left (bottom) on a nanofiber driven by the guided light in the fiber.</figcaption>
+  <h1><li>On-chip nanophotonic devices</li></h1>
+  <p style = "text-align: justify">
+  We design, fabricate and characterize new on-chip nanophotonic devices including on-chip optical tweezers, metasurfaces, mode conversion resonators, waveguides with well-designed near field landscapes, which can be used for on-chip trapping, actuating and sensing. 
+  </p>
+   <div class="row">
+    <div class="column">
+       <p style="margin:0;text-align:right;"><img src="onchipopticaltweezer_3D_blenderfigure_stl_RGBlight.jpg" alt="onchipopticaltweezer" style="width:70%"></p>
+    </div>
+    <div class="column">
+      <p style="margin:0;text-align:left;"><img src="trapping_and_tracking_with_an_on-chip_optical_tweezer.gif" alt="onchipopticaltweezertrapping" style="width:70%"></p>
+    </div>
+  </div>
+ <figcaption>Caption: Schematic of the broadband on-chip optical tweezer array based on freeform micro-optics (left). A 4.5-micrometer-particle is trapped by the on-chip optical tweezer (right). </figcaption>      
+</ol>

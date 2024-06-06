@@ -1,0 +1,35 @@
+I"¬<p>Use below codes to show and save high quality or vector images with defined figures size</p>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">%set the width and height of the figure windows</span>
+<span class="nb">width</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+<span class="nb">height</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+<span class="c1">%set the size of figure window to be displayed</span>
+<span class="nb">figure</span><span class="p">(</span><span class="s1">'unit'</span><span class="p">,</span><span class="s1">'inch'</span><span class="p">,</span><span class="s1">'position'</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="nb">width</span><span class="p">,</span><span class="nb">height</span><span class="p">]);</span>
+
+<span class="c1">%plot your figure here</span>
+
+<span class="c1">%set the size of figure to be saved</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gcf</span><span class="p">,</span><span class="s1">'InvertHardcopy'</span><span class="p">,</span><span class="s1">'on'</span><span class="p">);</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gcf</span><span class="p">,</span><span class="s1">'PaperUnits'</span><span class="p">,</span> <span class="s1">'inches'</span><span class="p">);</span>
+<span class="n">papersize</span> <span class="o">=</span> <span class="nb">get</span><span class="p">(</span><span class="nb">gcf</span><span class="p">,</span> <span class="s1">'PaperSize'</span><span class="p">);</span>
+<span class="n">left</span> <span class="o">=</span> <span class="p">(</span><span class="n">papersize</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span> <span class="nb">width</span><span class="p">)/</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">bottom</span> <span class="o">=</span> <span class="p">(</span><span class="n">papersize</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span> <span class="nb">height</span><span class="p">)/</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">myfiguresize</span> <span class="o">=</span> <span class="p">[</span><span class="n">left</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="nb">width</span><span class="p">,</span> <span class="nb">height</span><span class="p">];</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gcf</span><span class="p">,</span><span class="s1">'PaperPosition'</span><span class="p">,</span> <span class="n">myfiguresize</span><span class="p">);</span>
+
+<span class="c1">%save your figure</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'myfigure'</span><span class="p">,</span><span class="s1">'-djpeg'</span><span class="p">,</span><span class="s1">'-r600'</span><span class="p">);</span> <span class="c1">%resolution 600 dpi</span>
+<span class="c1">%or save your figure to pdf</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'myfigure'</span><span class="p">,</span><span class="s1">'-dpdf'</span><span class="p">);</span>
+<span class="c1">%or save your figure to svg</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'myfigure'</span><span class="p">,</span><span class="s1">'-dsvg'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Matlab image format used in print function</p>
+<p style="margin:0;text-align:center"><img src="matlabimageformatlist.png" alt="" style="width:90%" /></p>
+
+<p>Matlab vector image format used in print function</p>
+<p style="margin:0;text-align:center"><img src="matlabvectorimageformatlist.png" alt="" style="width:90%" /></p>
+
+:ET
