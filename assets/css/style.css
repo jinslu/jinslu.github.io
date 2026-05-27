@@ -335,7 +335,6 @@ a:hover { color: var(--blue-light); }
   gap: 28px;
   align-items: flex-start;
   margin-bottom: 28px;
-  border-top: 3px solid var(--navy);
 }
 .pi-photo {
   width: 200px;
@@ -408,7 +407,6 @@ a:hover { color: var(--blue-light); }
   box-shadow: var(--shadow-sm);
   padding: 28px 32px;
   margin-bottom: 24px;
-  border-left: 3px solid var(--blue);
 }
 .lab-slogan {
   font-style: italic;
@@ -511,7 +509,6 @@ a:hover { color: var(--blue-light); }
   box-shadow: var(--shadow-sm);
   padding: 22px;
   margin-bottom: 20px;
-  border-top: 3px solid var(--gold);
 }
 .sidebar-card h3 {
   font-size: 0.95rem;
@@ -815,7 +812,6 @@ a:hover { color: var(--blue-light); }
   padding: 28px;
   margin-bottom: 24px;
   box-shadow: var(--shadow-sm);
-  border-top: 3px solid var(--blue);
 }
 .research-topic h3 {
   font-size: 1.1rem;
@@ -943,7 +939,6 @@ a:hover { color: var(--blue-light); }
   padding: 28px;
   margin-bottom: 20px;
   box-shadow: var(--shadow-sm);
-  border-left: 3px solid var(--gold);
 }
 .join-section h3 { font-size: 1.05rem; margin-bottom: 14px; }
 .join-section ul {
@@ -993,7 +988,6 @@ a:hover { color: var(--blue-light); }
 .highlight-box {
   background: var(--bg-card);
   border-radius: var(--radius-lg);
-  border-top: 3px solid var(--navy);
   padding: 22px 28px;
   margin-top: 28px;
   box-shadow: var(--shadow-sm);
@@ -1469,7 +1463,6 @@ a:hover { color: var(--blue-light); }
 .ov-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-top: 3px solid var(--navy);
   border-radius: var(--radius);
   padding: 18px 20px;
   cursor: pointer;
