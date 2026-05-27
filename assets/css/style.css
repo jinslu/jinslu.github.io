@@ -141,16 +141,8 @@ a:hover { color: var(--blue-light); }
   justify-content: flex-end;
   gap: 0px;
 }
-.banner-lablogo-wrap {
-  background: rgba(255,255,255,0.93);
-  border-radius: 10px;
-  padding: 10px 18px;
-  display: flex;
-  align-items: center;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-}
 .banner-lablogo-img {
-  height: 68px;
+  height: 90px;
   width: auto;
   display: block;
 }
@@ -1083,8 +1075,7 @@ a:hover { color: var(--blue-light); }
   .banner-title { font-size: 1.15rem; }
   .banner-title.en-text { font-size: 1.3rem; }
   .banner-subtitle { font-size: 0.88rem; }
-  .banner-lablogo-wrap { padding: 8px 12px; }
-  .banner-lablogo-img { height: 52px; }
+  .banner-lablogo-img { height: 68px; }
 
   /* Slideshow */
   .hero-slideshow { height: 420px; }
@@ -1107,7 +1098,7 @@ a:hover { color: var(--blue-light); }
   .banner-title { font-size: 1.05rem; }
   .banner-title.en-text { font-size: 1.2rem; }
   .banner-inner { padding: 14px 16px; }
-  .banner-lablogo-wrap { display: none; }
+  .banner-lablogo-img { display: none; }
   .nav-lablogo { height: 26px; }
   .side-col { grid-template-columns: 1fr; }
   #page-wrap { padding: 16px 14px 36px; }
