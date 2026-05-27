@@ -116,7 +116,7 @@ a:hover { color: var(--blue-light); }
 .banner-title {
   display: block;
   font-family: 'Ma Shan Zheng', 'STXingkai', 'Noto Serif SC', serif;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 400;
   color: #fff;
   letter-spacing: 0.08em;
@@ -124,14 +124,14 @@ a:hover { color: var(--blue-light); }
 }
 .banner-title.en-text {
   font-family: 'Ma Shan Zheng', 'STXingkai', 'Noto Serif SC', serif;
-  font-size: 2.1rem;
+  font-size: 2.3rem;
   font-weight: 400;
   letter-spacing: 0.03em;
 }
 .banner-subtitle {
   display: block;
   font-family: 'Ma Shan Zheng', 'STXingkai', 'Noto Serif SC', serif;
-  font-size: 1.3rem;
+  font-size: 1.55rem;
   color: rgba(255,255,255,0.75);
   letter-spacing: 0.03em;
   font-weight: 400;
