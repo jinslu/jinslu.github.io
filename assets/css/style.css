@@ -200,7 +200,7 @@ a:hover { color: var(--blue-light); }
 ================================================================ */
 #site-nav {
   background: var(--bg-card);
-  border-bottom: 2px solid var(--gold);
+  border-bottom: 2px solid var(--navy);
   box-shadow: var(--shadow-sm);
   position: sticky;
   top: 0;
