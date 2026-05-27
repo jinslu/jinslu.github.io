@@ -940,21 +940,14 @@ a:hover { color: var(--blue-light); }
   line-height: 1.9;
 }
 .highlight-box {
-  border-top: 2px solid var(--navy);
-  padding: 28px 0 0;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border-top: 3px solid var(--navy);
+  padding: 22px 28px;
   margin-top: 28px;
-  text-align: center;
+  box-shadow: var(--shadow-sm);
 }
-.highlight-box h3 { color: var(--navy); margin-bottom: 12px; font-size: 1.05rem; }
-.highlight-box p { color: var(--text-mid); font-size: 0.9rem; line-height: 1.9; }
-.highlight-box .hb-email {
-  display: inline-block;
-  margin-top: 16px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--navy);
-  letter-spacing: 0.02em;
-}
+.highlight-box p { color: var(--text-mid); font-size: 0.9rem; line-height: 2.0; }
 
 /* ================================================================
    FOOTER
