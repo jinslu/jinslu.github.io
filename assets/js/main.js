@@ -86,6 +86,76 @@
   });
 })();
 
+/* ---- Publications Year Filter ---- */
+(function () {
+  var container = document.getElementById('pub-year-filter');
+  if (!container) return;
+
+  // Collect unique years from pub-items and conf-items with data-year
+  var seen = {};
+  var years = [];
+  document.querySelectorAll('.pub-item[data-year], .conf-item[data-year]').forEach(function (el) {
+    var y = el.dataset.year;
+    if (y && !seen[y]) { seen[y] = true; years.push(y); }
+  });
+  years.sort(function (a, b) { return parseInt(b) - parseInt(a); });
+
+  // Build "All" button
+  var allBtn = document.createElement('button');
+  allBtn.className = 'pyf-btn active';
+  allBtn.dataset.year = 'all';
+  allBtn.innerHTML = '<span class="cn-text">全部</span><span class="en-text">All</span>';
+  container.appendChild(allBtn);
+
+  // Build year buttons
+  years.forEach(function (y) {
+    var btn = document.createElement('button');
+    btn.className = 'pyf-btn';
+    btn.dataset.year = y;
+    btn.textContent = y;
+    container.appendChild(btn);
+  });
+
+  function applyFilter(year) {
+    // Update active button
+    container.querySelectorAll('.pyf-btn').forEach(function (b) {
+      b.classList.toggle('active', b.dataset.year === year);
+    });
+
+    // Filter journal pub-items
+    document.querySelectorAll('.pub-item[data-year]').forEach(function (el) {
+      el.style.display = (year === 'all' || el.dataset.year === year) ? '' : 'none';
+    });
+
+    // Filter year labels
+    document.querySelectorAll('.pub-year-label[data-year]').forEach(function (el) {
+      el.style.display = (year === 'all' || el.dataset.year === year) ? '' : 'none';
+    });
+
+    // Filter conference items
+    document.querySelectorAll('.conf-item[data-year]').forEach(function (el) {
+      el.style.display = (year === 'all' || el.dataset.year === year) ? '' : 'none';
+    });
+
+    // Hide selected-pubs box when a specific year is active (it has no year filter)
+    var selBox = document.querySelector('.selected-pubs-box');
+    if (selBox) selBox.style.display = (year === 'all') ? '' : 'none';
+
+    // Hide conference section header if no visible conf items
+    var confItems = document.querySelectorAll('.conf-item[data-year]');
+    var anyConf = false;
+    confItems.forEach(function (el) { if (el.style.display !== 'none') anyConf = true; });
+    document.querySelectorAll('.pub-section-conf').forEach(function (el) {
+      el.style.display = anyConf ? '' : 'none';
+    });
+  }
+
+  container.addEventListener('click', function (e) {
+    var btn = e.target.closest('.pyf-btn');
+    if (btn) applyFilter(btn.dataset.year);
+  });
+})();
+
 /* ---- Research Sub-Nav Tabs ---- */
 (function () {
   var tabs = document.querySelectorAll('.rst-btn');

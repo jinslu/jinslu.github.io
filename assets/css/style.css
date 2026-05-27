@@ -1436,6 +1436,71 @@ a:hover { color: var(--blue-light); }
   line-height: 1.65;
 }
 
+/* ================================================================
+   PUBLICATIONS PAGE — YEAR FILTER SIDEBAR
+================================================================ */
+#page-wrap.has-year-filter {
+  grid-template-columns: 1fr 118px;
+}
+
+.pyf-wrap {
+  position: sticky;
+  top: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.pyf-title {
+  font-family: 'Noto Serif SC', 'EB Garamond', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-light);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--border);
+}
+
+.pyf-btn {
+  display: block;
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 7px 10px;
+  font-size: 0.84rem;
+  color: var(--text-mid);
+  text-align: center;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+.pyf-btn:hover {
+  background: var(--border-light);
+  color: var(--navy);
+}
+.pyf-btn.active {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  #page-wrap.has-year-filter {
+    grid-template-columns: 1fr;
+  }
+  .pyf-wrap {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+  .pyf-btn { width: auto; }
+}
+
 /* Collaborators list */
 .collab-list {
   list-style: none;

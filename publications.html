@@ -4,7 +4,7 @@ title: "发表论文 / Publications"
 permalink: /publications/
 ---
 
-<div id="page-wrap" class="no-sidebar">
+<div id="page-wrap" class="has-year-filter">
 <div class="main-col">
 
   <div class="section-title" style="margin-bottom:20px">
@@ -119,10 +119,10 @@ permalink: /publications/
 
       {% if paper.year != current_year %}
         {% assign current_year = paper.year %}
-        <div class="pub-year-label">{{ paper.year }}</div>
+        <div class="pub-year-label" data-year="{{ paper.year }}">{{ paper.year }}</div>
       {% endif %}
 
-      <div class="pub-item">
+      <div class="pub-item" data-year="{{ paper.year }}">
         <div class="pub-num">[{{ paper.num }}]</div>
         <div class="pub-thumb">
           <img src="{{ '/user_data/images/pub_thumbs/' | append: paper.key | append: '.jpg' | relative_url }}" alt="" onerror="this.parentElement.style.display='none'">
@@ -191,12 +191,12 @@ permalink: /publications/
   <!-- ═══════════════════════════════════════════
        CONFERENCE PAPERS — auto from _data/publications.json
   ════════════════════════════════════════════════ -->
-  <div class="pub-section-title cn-text" style="margin-top:28px;">会议论文 Conference Papers</div>
-  <div class="pub-section-title en-text" style="margin-top:28px;">Conference Papers</div>
+  <div class="pub-section-title pub-section-conf cn-text" style="margin-top:28px;">会议论文 Conference Papers</div>
+  <div class="pub-section-title pub-section-conf en-text" style="margin-top:28px;">Conference Papers</div>
 
   <div style="background:var(--bg-card);border-radius:var(--radius-lg);padding:6px 28px 18px;box-shadow:var(--shadow-sm);">
     {% for paper in site.data.publications.conferences %}
-    <div class="conf-item">
+    <div class="conf-item" data-year="{{ paper.year }}">
       <div class="pub-num conf">C{{ paper.num }}</div>
       <div class="pub-body">
         <p class="pub-title">{{ paper.title }}</p>
@@ -251,4 +251,15 @@ permalink: /publications/
   </div>
 
 </div><!-- end main-col -->
+
+<!-- ── Year filter sidebar ── -->
+<div class="side-col">
+  <div class="pyf-wrap" id="pub-year-filter">
+    <div class="pyf-title">
+      <span class="cn-text">年份</span><span class="en-text">Year</span>
+    </div>
+    <!-- buttons injected by JS -->
+  </div>
+</div>
+
 </div><!-- end page-wrap -->
