@@ -140,7 +140,7 @@ a:hover { color: var(--blue-light); }
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 0px;
+  gap: 28px;
   order: 1;
 }
 .banner-lablogo-img {
