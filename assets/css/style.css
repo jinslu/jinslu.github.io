@@ -1369,7 +1369,7 @@ a:hover { color: var(--blue-light); }
   background: none;
   border: none;
   border-bottom: 3px solid transparent;
-  margin-bottom: -2px;
+  margin-bottom: 0;
   padding: 10px 22px;
   font-family: 'Noto Serif SC', 'EB Garamond', serif;
   font-size: 0.87rem;
