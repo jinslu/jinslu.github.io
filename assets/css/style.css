@@ -141,6 +141,19 @@ a:hover { color: var(--blue-light); }
   justify-content: flex-end;
   gap: 0px;
 }
+.banner-lablogo-wrap {
+  background: rgba(255,255,255,0.93);
+  border-radius: 10px;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+.banner-lablogo-img {
+  height: 68px;
+  width: auto;
+  display: block;
+}
 .whu-logo {
   height: 100px;     /* ← 和 .banner-logo 的高度一致 */
   width: auto;      /* 宽度自动，保持图片原比例 */
@@ -244,6 +257,21 @@ a:hover { color: var(--blue-light); }
 .nav-inner a.active {
   color: #0b3f80;
   font-weight: 600;
+}
+.nav-logo-link {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: 4px;
+  padding: 8px 10px 8px 0;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+.nav-logo-link::after { display: none !important; }
+.nav-lablogo {
+  height: 30px;
+  width: auto;
+  display: block;
 }
 
 /* ================================================================
@@ -367,6 +395,15 @@ a:hover { color: var(--blue-light); }
   padding: 28px 32px;
   margin-bottom: 24px;
   border-left: 3px solid var(--blue);
+}
+.lab-slogan {
+  font-style: italic;
+  color: var(--text-light);
+  font-size: 0.88rem;
+  text-align: center;
+  margin-top: 14px;
+  margin-bottom: 0;
+  letter-spacing: 0.04em;
 }
 .research-grid {
   display: grid;
@@ -1046,6 +1083,8 @@ a:hover { color: var(--blue-light); }
   .banner-title { font-size: 1.15rem; }
   .banner-title.en-text { font-size: 1.3rem; }
   .banner-subtitle { font-size: 0.88rem; }
+  .banner-lablogo-wrap { padding: 8px 12px; }
+  .banner-lablogo-img { height: 52px; }
 
   /* Slideshow */
   .hero-slideshow { height: 420px; }
@@ -1068,6 +1107,8 @@ a:hover { color: var(--blue-light); }
   .banner-title { font-size: 1.05rem; }
   .banner-title.en-text { font-size: 1.2rem; }
   .banner-inner { padding: 14px 16px; }
+  .banner-lablogo-wrap { display: none; }
+  .nav-lablogo { height: 26px; }
   .side-col { grid-template-columns: 1fr; }
   #page-wrap { padding: 16px 14px 36px; }
   .hero-slideshow { height: 260px; }
