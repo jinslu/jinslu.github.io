@@ -1158,7 +1158,7 @@ a:hover { color: var(--blue-light); }
   color: var(--text-mid);
   line-height: 1.7;
 }
-.rc-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+.rc-tags { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px; }
 .rc-tag {
   font-size: 0.68rem;
   color: var(--text-light);
