@@ -86,6 +86,55 @@
   });
 })();
 
+/* ---- Research Sub-Nav Tabs ---- */
+(function () {
+  var tabs = document.querySelectorAll('.rst-btn');
+  if (!tabs.length) return;
+
+  // IDs that live inside the Research Directions panel
+  var directionIds = ['light-matter', 'optical-tweezers', 'integrated-chips', 'metaphotonics'];
+
+  function activateTab(panelId) {
+    tabs.forEach(function (t) {
+      t.classList.toggle('active', t.dataset.panel === panelId);
+    });
+    document.querySelectorAll('.rst-panel').forEach(function (p) {
+      p.classList.toggle('active', p.id === 'rp-' + panelId);
+    });
+  }
+
+  // Exposed globally so overview cards can call it
+  window.showResearchTab = function (panelId, anchorId) {
+    activateTab(panelId);
+    history.replaceState(null, '', window.location.pathname + (anchorId ? '#' + anchorId : ''));
+    if (anchorId) {
+      setTimeout(function () {
+        var el = document.getElementById(anchorId);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 60);
+    }
+  };
+
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () {
+      activateTab(t.dataset.panel);
+      history.replaceState(null, '', window.location.pathname);
+    });
+  });
+
+  // On load: honour URL hash
+  var hash = window.location.hash.replace('#', '');
+  if (hash && directionIds.indexOf(hash) !== -1) {
+    activateTab('directions');
+    setTimeout(function () {
+      var el = document.getElementById(hash);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  } else {
+    activateTab('overview');
+  }
+})();
+
 /* ---- Hero Slideshow ---- */
 (function () {
   const slides = document.querySelectorAll('.hs-slide');
