@@ -570,10 +570,7 @@ a:hover { color: var(--blue-light); }
   font-size: 1.05rem;
   color: var(--navy-mid);
   margin-bottom: 16px;
-  padding: 8px 16px;
-  background: linear-gradient(90deg, var(--border-light) 0%, transparent 100%);
-  border-left: 3px solid var(--gold);
-  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 8px 0;
 }
 .members-grid {
   display: grid;
@@ -1267,9 +1264,7 @@ a:hover { color: var(--blue-light); }
   font-size: 1rem;
   color: var(--navy);
   margin-bottom: 16px;
-  padding: 6px 14px;
-  background: linear-gradient(90deg, var(--border-light), transparent);
-  border-left: 3px solid var(--gold);
+  padding: 6px 0;
 }
 .photo-wall {
   display: grid;
