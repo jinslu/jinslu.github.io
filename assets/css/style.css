@@ -1371,7 +1371,6 @@ a:hover { color: var(--blue-light); }
 .research-subnav {
   display: flex;
   gap: 0;
-  border-bottom: 2px solid var(--navy);
   margin-bottom: 32px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
