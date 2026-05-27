@@ -7,12 +7,7 @@ permalink: /publications/
 <div id="page-wrap" class="has-year-filter">
 <div class="main-col">
 
-  <div class="section-title" style="margin-bottom:20px">
-    <span class="dot"></span>
-    <h2><span class="cn-text">发表论文</span><span class="en-text">Publications</span></h2>
-  </div>
-
-  <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+  <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:4px;">
     <span>
       * <span class="cn-text">通讯作者</span><span class="en-text">Corresponding author</span>
       &nbsp;|&nbsp;
@@ -24,14 +19,10 @@ permalink: /publications/
   <!-- ═══════════════════════════════════════════
        SELECTED PUBLICATIONS (manually curated)
   ════════════════════════════════════════════════ -->
+  <div class="pub-section-title cn-text">代表性论文</div>
+  <div class="pub-section-title en-text">Selected Publications</div>
+
   <div class="selected-pubs-box">
-    <div class="spb-head">
-      <span style="font-size:1.2rem;color:var(--gold);">★</span>
-      <h3>
-        <span class="cn-text">代表性论文</span>
-        <span class="en-text">Selected Publications</span>
-      </h3>
-    </div>
 
     {% assign selected_keys = "Lu2026PRL,Lu2025SA,Lu2023PRL2,Lu2023PRL,Lu2017PRL" | split: "," %}
     {% for key in selected_keys %}

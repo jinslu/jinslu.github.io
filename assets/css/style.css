@@ -1277,18 +1277,6 @@ a:hover { color: var(--blue-light); }
   margin-bottom: 28px;
   box-shadow: var(--shadow-sm);
 }
-.selected-pubs-box .spb-head {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 4px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--border);
-}
-.selected-pubs-box .spb-head h3 {
-  font-size: 1rem;
-  color: var(--text-main);
-}
 .pub-num.reverse { color: var(--gold); }
 
 .pub-section-title {
