@@ -12,7 +12,7 @@ pi_dept: "动力与机械学院"
 pi_dept_en: "School of Power and Mechanical Engineering"
 pi_uni: "武汉大学"
 pi_uni_en: "Wuhan University"
-pi_email: "jinslu[at]whu.edu.cn"
+pi_email: "jinslu@whu.edu.cn"
 
 markdown: kramdown
 permalink: pretty
