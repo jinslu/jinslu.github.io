@@ -158,10 +158,22 @@ a:hover { color: var(--blue-light); }
   gap: 28px;
   order: 1;
 }
+.banner-lablogo-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
 .banner-lablogo-img {
-  height: 112px;
+  height: 72px;
   width: auto;
   display: block;
+}
+.banner-slogan-img {
+  height: 22px;
+  width: auto;
+  display: block;
+  opacity: 0.92;
 }
 .whu-logo {
   height: 100px;     /* ← 和 .banner-logo 的高度一致 */
@@ -1105,7 +1117,8 @@ a:hover { color: var(--blue-light); }
   .banner-title { font-size: 1.15rem; }
   .banner-title.en-text { font-size: 1.3rem; }
   .banner-subtitle { font-size: 0.88rem; }
-  .banner-lablogo-img { height: 80px; }
+  .banner-lablogo-img { height: 54px; }
+  .banner-slogan-img { height: 18px; }
   .nav-slogan-img { display: none; }
 
   /* Slideshow */
