@@ -150,7 +150,7 @@ a:hover { color: var(--blue-light); }
   display: block;
 }
 .banner-slogan-img {
-  height: 22px;
+  height: 17px;
   width: auto;
   display: block;
   filter: brightness(0.25);
@@ -1098,7 +1098,7 @@ a:hover { color: var(--blue-light); }
   .banner-title.en-text { font-size: 1.3rem; }
   .banner-subtitle { font-size: 0.88rem; }
   .banner-lablogo-img { height: 54px; }
-  .banner-slogan-img { height: 18px; }
+  .banner-slogan-img { height: 14px; }
   .nav-slogan-img { display: none; }
 
   /* Slideshow */
