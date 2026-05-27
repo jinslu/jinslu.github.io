@@ -66,7 +66,7 @@ a:hover { color: var(--blue-light); }
 .banner-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 12px 0 32px;
+  padding: 0 32px 0 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -78,6 +78,7 @@ a:hover { color: var(--blue-light); }
   display: flex;
   align-items: center;
   gap: 32px;
+  order: 2;
 }
 .banner-logo {
   width: auto;
@@ -138,8 +139,9 @@ a:hover { color: var(--blue-light); }
 .banner-actions {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 0px;
+  order: 1;
 }
 .banner-lablogo-img {
   height: 112px;
