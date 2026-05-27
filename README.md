@@ -1,60 +1,60 @@
-# 集成与超构光子芯片实验室网站 / Integrated and Meta Photonics Lab Website
+# 集成与超构光子芯片实验室网站
 
-## 文件结构 / File Structure
+**Integrated and Meta Photonics Lab, Wuhan University**
+
+---
+
+## 项目结构
 
 ```
-jinslu.github.io/
-├── _config.yml              # Jekyll 配置
-├── _layouts/
-│   └── default.html         # 主布局（导航、页眉、页脚）
-├── assets/
-│   ├── css/
-│   │   └── style.css        # 全站样式
-│   ├── js/
-│   │   └── main.js          # 语言切换 + 导航激活
-│   └── img/                 # ⬅ 放置图片（PI照片等）
-│       ├── pi.jpg           # PI头像（130×160px）
-│       └── logo.png         # 实验室 logo（可选，64×64px）
-├── index.html               # 首页
-├── research.html            # 研究方向
-├── members.html             # 课题组成员
-├── publications.html        # 发表论文
-├── news.html                # 新闻动态
-├── contact.html             # 联系我们
-└── join.html                # 招生信息
+lab-site/
+├── _config.yml          # GitHub 版主配置（metaphotonics.cn）
+├── _config.boda.yml     # 博达版配置（lu.whu.edu.cn，仅覆盖 url）
+├── _data/               # 数据文件（publications.json 等）
+├── _layouts/            # 页面模板
+├── _includes/           # 公共组件
+├── assets/              # CSS / JS
+├── user_data/           # 图片、PDF 等内容资源
+├── scripts/             # 工具脚本
+│   └── build-boda.sh    # 博达打包脚本
+├── .github/workflows/   # GitHub Actions 自动部署
+├── CNAME                # metaphotonics.cn
+└── *.html               # 各栏目页面
 ```
 
-## 部署步骤 / Deployment
+---
 
-1. **清空现有仓库内容**（保留 `.git` 目录），将上述所有文件复制进去。
+## 两个部署版本
 
-2. **替换占位内容：**
-   - `assets/img/pi.jpg` — 替换为您的真实照片
-   - `members.html` — 替换为真实成员信息
-   - `publications.html` — 替换为真实论文列表
-   - `news.html` — 替换为真实新闻
-   - `index.html` 中的 `pi-bio` — 替换为您的真实简介
+### 版本 A：GitHub Pages → metaphotonics.cn
 
-3. **推送到 GitHub：**
-   ```bash
-   git add .
-   git commit -m "rebuild: professional academic lab site"
-   git push origin main
-   ```
+推送到 main 分支后 GitHub Actions 自动构建发布（约 2 分钟生效）：
 
-4. **等待 1-2 分钟**，访问 `https://jinslu.github.io` 即可看到新网站。
+    git add .
+    git commit -m "说明"
+    git push origin main
 
-## 功能说明 / Features
+**首次 GitHub 设置（只需做一次）：**
+1. 在 GitHub 创建仓库（建议名：lab-website）
+2. Settings → Pages → Source 选择 **GitHub Actions**
+3. Settings → Pages → Custom domain 填写 `metaphotonics.cn`
+4. DNS 添加：CNAME @ <username>.github.io
+5. 添加远程并推送：
+   git remote add origin git@github.com:<用户名>/<仓库名>.git
+   git push -u origin main
 
-- ✅ 中英双语切换（点击右上角 EN/中文 按钮）
-- ✅ 7个页面：首页、研究方向、成员、论文、新闻、联系、招生
-- ✅ 论文/新闻分类筛选
-- ✅ 响应式设计（支持手机/平板/电脑）
-- ✅ 专业学术蓝配色，参照北大课题组风格
-- ✅ 无需插件，纯 Jekyll 原生支持
+---
 
-## 自定义建议 / Customization
+### 版本 B：博达平台 → lu.whu.edu.cn
 
-- 修改颜色：编辑 `assets/css/style.css` 中 `:root` 的 CSS 变量
-- 添加实验室 Logo：将图片放至 `assets/img/logo.png`，并在 `_layouts/default.html` 取消注释 `<img>` 标签
-- 添加成员照片：放至 `assets/img/members/` 并在 `members.html` 中引用
+    bash scripts/build-boda.sh
+    # 生成 boda-upload.zip，解压后上传到博达平台
+
+---
+
+## 日常更新流程
+
+1. 修改源文件
+2. 本地预览：bundle exec jekyll serve
+3. 推送 GitHub（自动更新 metaphotonics.cn）：git add . && git commit -m "说明" && git push
+4. 更新博达：bash scripts/build-boda.sh → 上传 boda-upload.zip
