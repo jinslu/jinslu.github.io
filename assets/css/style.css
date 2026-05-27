@@ -1436,6 +1436,28 @@ a:hover { color: var(--blue-light); }
   line-height: 1.65;
 }
 
+/* Collaborators list */
+.collab-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.collab-list li {
+  border-bottom: 1px solid var(--border-light);
+  padding: 13px 4px;
+}
+.collab-list li:first-child { border-top: 1px solid var(--border-light); }
+.collab-list li a {
+  font-size: 0.92rem;
+  color: var(--text);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.collab-list li a:hover { color: var(--blue); }
+
 /* Placeholder panels (Facilities / Fundings) */
 .rst-placeholder {
   text-align: center;
