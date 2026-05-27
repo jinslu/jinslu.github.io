@@ -1,0 +1,254 @@
+---
+layout: default
+title: "发表论文 / Publications"
+permalink: /publications/
+---
+
+<div id="page-wrap" class="no-sidebar">
+<div class="main-col">
+
+  <div class="section-title" style="margin-bottom:20px">
+    <span class="dot"></span>
+    <h2><span class="cn-text">发表论文</span><span class="en-text">Publications</span></h2>
+  </div>
+
+  <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+    <span>
+      * <span class="cn-text">通讯作者</span><span class="en-text">Corresponding author</span>
+      &nbsp;|&nbsp;
+      † <span class="cn-text">并列第一</span><span class="en-text">Equal contribution</span>
+    </span>
+    <a href="https://scholar.google.com/citations?user=RCy7PHMAAAAJ&hl=en&oi=ao" target="_blank" style="color:var(--blue);">📊 Google Scholar</a>
+  </p>
+
+  <!-- ═══════════════════════════════════════════
+       SELECTED PUBLICATIONS (manually curated)
+  ════════════════════════════════════════════════ -->
+  <div class="selected-pubs-box">
+    <div class="spb-head">
+      <span style="font-size:1.2rem;color:var(--gold);">★</span>
+      <h3>
+        <span class="cn-text">代表性论文 Selected Publications</span>
+        <span class="en-text">Selected Publications</span>
+      </h3>
+    </div>
+
+    {% assign selected_keys = "Lu2026PRL,Lu2025SA,Lu2023PRL2,Lu2023PRL,Lu2017PRL" | split: "," %}
+    {% for key in selected_keys %}
+      {% assign paper = nil %}
+      {% for a in site.data.publications.articles %}
+        {% if a.key == key %}{% assign paper = a %}{% endif %}
+      {% endfor %}
+      {% if paper %}
+      <div class="pub-item" {% if forloop.first %}style="padding-top:12px"{% endif %}>
+        <div class="pub-num reverse">★</div>
+        <div class="pub-thumb">
+          <img src="{{ '/user_data/images/pub_thumbs/' | append: paper.key | append: '.jpg' | relative_url }}" alt="" onerror="this.parentElement.style.display='none'">
+        </div>
+        <div class="pub-body">
+          <p class="pub-title">{{ paper.title }}</p>
+          <p class="pub-authors">{{ paper.author | replace: "Jinsheng Lu", "<strong>Jinsheng Lu</strong>" | replace: "Jin‐Sheng Lu", "<strong>Jin‐Sheng Lu</strong>" }}</p>
+          {% capture journal_text %}{{ paper.journal }}{% if paper.volume and paper.volume != "" %}, {{ paper.volume }}{% endif %}{% if paper.number and paper.number != "" %}({{ paper.number }}){% endif %}{% if paper.pages %}, {{ paper.pages }}{% endif %}, {{ paper.year }}.{% endcapture %}
+          <p class="pub-journal">
+            {% if paper.doi and paper.doi != "" %}
+            <a href="https://doi.org/{{ paper.doi }}" target="_blank">{{ journal_text }}</a>
+            {% else %}
+            {{ journal_text }}
+            {% endif %}
+            <span class="pub-inline-links">
+            {% if paper.file and paper.file != "" %}
+            <a href="{{ paper.file | relative_url }}" target="_blank">PDF</a>
+            {% endif %}
+            {% if paper.editors_suggestion == true %}
+            <span>
+              <span class="cn-text">编辑推荐</span><span class="en-text">Editors' Suggestion</span>
+            </span>
+            {% endif %}
+            {% if paper.featured_in_physics == true %}
+            {% if paper.featured_in_physics_url and paper.featured_in_physics_url != "" %}
+            <a href="{{ paper.featured_in_physics_url }}" target="_blank">
+              <span class="cn-text">Featured in Physics</span><span class="en-text">Featured in Physics</span>
+            </a>
+            {% else %}
+            <span>
+              <span class="cn-text">Featured in Physics</span><span class="en-text">Featured in Physics</span>
+            </span>
+            {% endif %}
+            {% endif %}
+            {% if paper.cover and paper.cover != "" %}
+            <a href="{{ paper.cover }}" target="_blank">
+              <span class="cn-text">封面文章</span><span class="en-text">Cover Article</span>
+            </a>
+            {% endif %}
+            {% if paper.news_items and paper.news_items.size > 0 %}
+              {% for item in paper.news_items %}
+              <a href="{{ item.url }}" target="_blank">{{ item.outlet }}</a>
+              {% endfor %}
+            {% elsif paper.news and paper.news != "" %}
+            <a href="{{ paper.news }}" target="_blank">
+              <span class="cn-text">新闻报道</span><span class="en-text">News</span>
+            </a>
+            {% endif %}
+            </span>
+          </p>
+          {% if paper.summary and paper.summary != "" %}
+          <div class="pub-summary-wrap">
+            <button class="pub-summary-toggle" onclick="this.parentElement.classList.toggle('open')">
+              <span class="cn-text">总结</span><span class="en-text">Summary</span><span class="ps-arrow"> ▸</span>
+            </button>
+            <p class="pub-summary">{{ paper.summary }}</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       JOURNAL ARTICLES — auto from _data/publications.json
+  ════════════════════════════════════════════════ -->
+  <div class="pub-section-title cn-text">期刊论文 Journal Articles</div>
+  <div class="pub-section-title en-text">Journal Articles</div>
+
+  <div style="background:var(--bg-card);border-radius:var(--radius-lg);padding:6px 28px 20px;box-shadow:var(--shadow-sm);">
+
+    {% assign current_year = 0 %}
+    {% for paper in site.data.publications.articles %}
+
+      {% if paper.year != current_year %}
+        {% assign current_year = paper.year %}
+        <div class="pub-year-label">{{ paper.year }}</div>
+      {% endif %}
+
+      <div class="pub-item">
+        <div class="pub-num">[{{ paper.num }}]</div>
+        <div class="pub-thumb">
+          <img src="{{ '/user_data/images/pub_thumbs/' | append: paper.key | append: '.jpg' | relative_url }}" alt="" onerror="this.parentElement.style.display='none'">
+        </div>
+        <div class="pub-body">
+          <p class="pub-title">{{ paper.title }}</p>
+          <p class="pub-authors">{{ paper.author | replace: "Jinsheng Lu", "<strong>Jinsheng Lu</strong>" | replace: "Jin‐Sheng Lu", "<strong>Jin‐Sheng Lu</strong>" }}</p>
+          {% capture journal_text %}{{ paper.journal }}{% if paper.volume and paper.volume != "" %}, vol. {{ paper.volume }}{% endif %}{% if paper.number and paper.number != "" %}({{ paper.number }}){% endif %}{% if paper.pages %}, {{ paper.pages }}{% endif %}, {{ paper.year }}.{% endcapture %}
+          <p class="pub-journal">
+            {% if paper.doi and paper.doi != "" %}
+            <a href="https://doi.org/{{ paper.doi }}" target="_blank">{{ journal_text }}</a>
+            {% else %}
+            {{ journal_text }}
+            {% endif %}
+            <span class="pub-inline-links">
+            {% if paper.file and paper.file != "" %}
+            <a href="{{ paper.file | relative_url }}" target="_blank">PDF</a>
+            {% endif %}
+            {% if paper.editors_suggestion == true %}
+            <span>
+              <span class="cn-text">编辑推荐</span><span class="en-text">Editors' Suggestion</span>
+            </span>
+            {% endif %}
+            {% if paper.featured_in_physics == true %}
+            {% if paper.featured_in_physics_url and paper.featured_in_physics_url != "" %}
+            <a href="{{ paper.featured_in_physics_url }}" target="_blank">
+              <span class="cn-text">Featured in Physics</span><span class="en-text">Featured in Physics</span>
+            </a>
+            {% else %}
+            <span>
+              <span class="cn-text">Featured in Physics</span><span class="en-text">Featured in Physics</span>
+            </span>
+            {% endif %}
+            {% endif %}
+            {% if paper.cover and paper.cover != "" %}
+            <a href="{{ paper.cover }}" target="_blank">
+              <span class="cn-text">封面文章</span><span class="en-text">Cover Article</span>
+            </a>
+            {% endif %}
+            {% if paper.news_items and paper.news_items.size > 0 %}
+              {% for item in paper.news_items %}
+              <a href="{{ item.url }}" target="_blank">{{ item.outlet }}</a>
+              {% endfor %}
+            {% elsif paper.news and paper.news != "" %}
+            <a href="{{ paper.news }}" target="_blank">
+              <span class="cn-text">新闻报道</span><span class="en-text">News</span>
+            </a>
+            {% endif %}
+            </span>
+          </p>
+          {% if paper.summary and paper.summary != "" %}
+          <div class="pub-summary-wrap">
+            <button class="pub-summary-toggle" onclick="this.parentElement.classList.toggle('open')">
+              <span class="cn-text">总结</span><span class="en-text">Summary</span><span class="ps-arrow"> ▸</span>
+            </button>
+            <p class="pub-summary">{{ paper.summary }}</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+    {% endfor %}
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       CONFERENCE PAPERS — auto from _data/publications.json
+  ════════════════════════════════════════════════ -->
+  <div class="pub-section-title cn-text" style="margin-top:28px;">会议论文 Conference Papers</div>
+  <div class="pub-section-title en-text" style="margin-top:28px;">Conference Papers</div>
+
+  <div style="background:var(--bg-card);border-radius:var(--radius-lg);padding:6px 28px 18px;box-shadow:var(--shadow-sm);">
+    {% for paper in site.data.publications.conferences %}
+    <div class="conf-item">
+      <div class="pub-num conf">C{{ paper.num }}</div>
+      <div class="pub-body">
+        <p class="pub-title">{{ paper.title }}</p>
+        <p class="pub-authors">{{ paper.author | replace: "Jinsheng Lu", "<strong>Jinsheng Lu</strong>" }}</p>
+        {% capture journal_text %}{{ paper.booktitle }}{% if paper.pages %}, pp. {{ paper.pages }}{% endif %}, {{ paper.year }}.{% endcapture %}
+        <p class="pub-journal">
+          {% if paper.doi and paper.doi != "" %}
+          <a href="https://doi.org/{{ paper.doi }}" target="_blank">{{ journal_text }}</a>
+          {% else %}
+          {{ journal_text }}
+          {% endif %}
+          <span class="pub-inline-links">
+          {% if paper.file and paper.file != "" %}
+          <a href="{{ paper.file | relative_url }}" target="_blank">PDF</a>
+          {% endif %}
+          </span>
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       PATENTS — manually maintained
+  ════════════════════════════════════════════════ -->
+  <div class="pub-section-title cn-text" style="margin-top:28px;">发明专利 Patents</div>
+  <div class="pub-section-title en-text" style="margin-top:28px;">Patents</div>
+
+  <div style="background:var(--bg-card);border-radius:var(--radius-lg);padding:8px 28px 18px;box-shadow:var(--shadow-sm);">
+    <div class="patent-item">
+      <div class="pub-num patent">P1</div>
+      <div class="pub-body">
+        <p class="pub-title">
+          <span class="cn-text">级联模式谐振器</span>
+          <span class="en-text">Cascaded-mode resonators</span>
+        </p>
+        <p class="pub-authors cn-text">Vincent Ginis, Ileana-Cristina Benea-Chelmus, <strong>卢锦胜</strong>, Marco Piccardo, Federico Capasso | 专利号：US 12,481,101 B2</p>
+        <p class="pub-authors en-text">Vincent Ginis, Ileana-Cristina Benea-Chelmus, <strong>Jinsheng Lu</strong>, Marco Piccardo, Federico Capasso | Patent No.: US 12,481,101 B2</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wiki -->
+  <div style="margin-top:36px;padding-top:18px;border-top:1px solid var(--border-light);font-size:0.82rem;color:var(--text-light);">
+    <span class="cn-text">📂 课题组内部文档（需授权访问）：</span>
+    <span class="en-text">📂 Internal lab documentation (access required):</span>
+    <a href="{{ '/wiki/' | relative_url }}" style="color:var(--blue);margin-left:4px;">
+      <span class="cn-text">Wiki 项目 →</span>
+      <span class="en-text">Lab Wiki →</span>
+    </a>
+  </div>
+
+</div><!-- end main-col -->
+</div><!-- end page-wrap -->

@@ -1,0 +1,20 @@
+title: "集成与超构光子芯片实验室"
+title_en: "Integrated and Meta Photonics Lab"
+description: "武汉大学动力与机械学院 · 卢锦胜教授课题组"
+description_en: "School of Power and Mechanical Engineering, Wuhan University"
+baseurl: ""
+url: "https://metaphotonics.cn"
+pi_name: "卢锦胜"
+pi_name_en: "Jinsheng Lu"
+pi_title: "教授"
+pi_title_en: "Professor"
+pi_dept: "动力与机械学院"
+pi_dept_en: "School of Power and Mechanical Engineering"
+pi_uni: "武汉大学"
+pi_uni_en: "Wuhan University"
+pi_email: "jinslu[at]whu.edu.cn"
+
+markdown: kramdown
+permalink: pretty
+plugins:
+  - jekyll-feed

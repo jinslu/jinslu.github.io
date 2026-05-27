@@ -1,0 +1,49 @@
+# 轮播幻灯片配置 / Slideshow configuration
+#
+# 增加一张：在下面复制一个 - 块，填写信息，并把图片放入 assets/img/slides/
+# 删除一张：删掉对应的 - 块
+# 调换顺序：上下移动 - 块
+#
+# image:    图片文件名（放在 assets/img/slides/ 目录，支持 jpg/png）
+#           不放图片时自动显示 SVG 占位图
+# title_cn: 中文标题
+# title_en: 英文标题
+# desc_cn:  中文副标题
+# desc_en:  英文副标题
+
+slides:
+  - image:    slide-1.jpg
+    title_cn: 光致推拉
+    title_en: Light-Induced Pulling & Pushing
+    desc_cn:  光力与光泳力协同效应驱动微米金片定向拉推，实现有轨双向非接触光操控
+    desc_en:  Bidirectional non-contact particle manipulation via synergistic optical force and photophoretic force
+    paper_cn: Physical Review Letters, 118(4), 043601, 2017
+    paper_en: Physical Review Letters, 118(4), 043601, 2017
+    link:     /user_data/pdf/Lu2017PRL.pdf
+
+  - image:    slide-2.jpg
+    title_cn: 光驱马达
+    title_en: Light-Driven Motors
+    desc_cn:  脉冲光致兰姆波驱动纳米马达，实现干燥环境固态纳米机械驱动
+    desc_en:  On-chip Lamb wave–driven nanomotors achieving dry-environment nanoscale mechanical actuation
+    paper_cn: Science Advances, vol. 5(3), eaau8271, 2019
+    paper_en: Science Advances, vol. 5(3), eaau8271, 2019
+    link:     /user_data/pdf/Lu2019SA.pdf
+
+  - image:    slide-3.jpg
+    title_cn: 片上光镊
+    title_en: On-chip Optical Tweezers
+    desc_cn:  自由曲面光学元件赋能片上光镊，实现跨尺度精准光学俘获与操控
+    desc_en:  Freeform meta-optic elements enabling on-chip optical tweezers for precision particle trapping
+    paper_cn: Optica, vol. 8(3), 409, 2021
+    paper_en: Optica, vol. 8(3), 409, 2021
+    link:     /user_data/pdf/Yu2021Optica.pdf
+
+  - image:    slide-4.jpg
+    title_cn: 集成光子
+    title_en: Integrated Photonics
+    desc_cn:  级联横模干涉仪突破传统干涉仪局限，实现光谱形状与线宽的精密工程化
+    desc_en:  Cascaded-mode interferometers for spectral shape and linewidth engineering beyond conventional limits
+    paper_cn: Science Advances, 11(12), eadt4154, 2025
+    paper_en: Science Advances, 11(12), eadt4154, 2025
+    link:     /user_data/pdf/Lu2025SA.pdf

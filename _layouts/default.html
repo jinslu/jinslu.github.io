@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title and page.title != "" %}{{ page.title }} | {% endif %}集成与超构光子芯片实验室 · 武汉大学 / Integrated and Meta Photonics Lab · Wuhan University</title>
+  <meta name="description" content="武汉大学动力与机械学院 卢锦胜教授课题组 - 片上光镊、集成光芯片、超构光子学、微纳光子学">
+  <script>
+    (function () {
+      try {
+        var lang = sessionStorage.getItem('imp-lab-session-lang') || 'en';
+        if (lang !== 'cn') lang = 'en';
+        document.documentElement.setAttribute('data-lang', lang);
+        document.documentElement.setAttribute('lang', lang === 'cn' ? 'zh-CN' : 'en');
+      } catch (e) {
+        document.documentElement.setAttribute('data-lang', 'en');
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔬</text></svg>">
+</head>
+<body>
+
+<!-- ======= TOP BANNER ======= -->
+<header id="site-banner">
+  <div class="banner-inner">
+    <div class="banner-identity">
+      <div class="banner-logo">
+        <img src="{{ '/user_data/images/whu-logo.png' | relative_url }}"
+             alt="Wuhan University"
+             onerror="if(this.src.endsWith('.png')){this.src=this.src.replace('.png','.jpg')}else{this.style.display='none'}"
+             class="whu-logo">
+      </div>
+      <div class="banner-divider"></div>
+      <div class="banner-text-content">
+        <span class="banner-title cn-text">集成与超构光子芯片实验室</span>
+        <span class="banner-title en-text">Integrated and Meta Photonics Lab</span>
+        <span class="banner-subtitle cn-text">Integrated and Meta Photonics Lab</span>
+      </div>
+    </div>
+    <div class="banner-actions">
+    </div>
+  </div>
+</header>
+
+<!-- ======= NAVIGATION ======= -->
+<nav id="site-nav">
+  <div class="nav-inner">
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href="{{ '/' | relative_url }}">
+        <span class="cn-text">首页</span><span class="en-text">Home</span>
+      </a>
+      <a href="{{ '/research/' | relative_url }}">
+        <span class="cn-text">研究方向</span><span class="en-text">Research</span>
+      </a>
+      <a href="{{ '/members/' | relative_url }}">
+        <span class="cn-text">课题组成员</span><span class="en-text">Members</span>
+      </a>
+      <a href="{{ '/publications/' | relative_url }}">
+        <span class="cn-text">发表论文</span><span class="en-text">Publications</span>
+      </a>
+      <a href="{{ '/news/' | relative_url }}">
+        <span class="cn-text">新闻动态</span><span class="en-text">News</span>
+      </a>
+      <a href="{{ '/contact/' | relative_url }}">
+        <span class="cn-text">联系我们</span><span class="en-text">Contact</span>
+      </a>
+      <a href="{{ '/join/' | relative_url }}">
+        <span class="cn-text">招生信息</span><span class="en-text">Join Us</span>
+      </a>
+      <div class="lang-switcher" style="margin-left: auto;">
+        <button class="lang-btn" id="lang-btn-en" data-lang="en">English</button>
+        <button class="lang-btn" id="lang-btn-cn" data-lang="cn">Chinese</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ======= MAIN CONTENT ======= -->
+<main>
+  {{ content }}
+</main>
+
+<!-- ======= FOOTER ======= -->
+<footer id="site-footer">
+  <!-- <p>
+    <strong class="cn-text">集成与超构光子芯片实验室</strong>
+    <strong class="en-text">Integrated and Meta Photonics Lab</strong>
+    &nbsp;|&nbsp;
+    <span class="cn-text">武汉大学 动力与机械学院</span>
+    <span class="en-text">School of Power and Mechanical Engineering, Wuhan University</span>
+  </p>
+  <p>
+    jinslu[at]whu.edu.cn
+  </p> -->
+  <p style="margin-top:6px; font-size:0.72rem; opacity:0.6;">
+    © {{ 'now' | date: "%Y" }} Integrated and Meta Photonics Lab · Wuhan University · All Rights Reserved
+  </p>
+</footer>
+
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<div class="hero-slideshow">
+
+  {% for slide in site.data.slides.slides %}
+  <div class="hs-slide{% if forloop.first %} active{% endif %}">
+    <div class="hs-bg">
+      <img src="{{ '/user_data/images/slides/' | append: slide.image | relative_url }}"
+           alt="{{ slide.title_en }}"
+           onerror="if(this.src.endsWith('.jpg')){this.src=this.src.replace('.jpg','.png')}else{this.style.display='none';this.nextElementSibling.style.display='block'}">
+      <svg style="display:none" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1200" height="400" fill="#071628"/>
+        <text x="600" y="185" text-anchor="middle" font-family="Georgia,serif"
+              font-size="22" fill="rgba(200,151,58,0.7)">{{ slide.title_cn }}</text>
+        <text x="600" y="220" text-anchor="middle" font-family="Georgia,serif"
+              font-size="16" fill="rgba(255,255,255,0.4)">{{ slide.title_en }}</text>
+      </svg>
+    </div>
+    <div class="hs-caption">
+      <h2>
+        <span class="cn-text">{{ slide.title_cn }}</span>
+        <span class="en-text">{{ slide.title_en }}</span>
+      </h2>
+      {% if slide.link %}
+      <p>
+        <a class="hs-desc-link" href="{{ slide.link }}" target="_blank" rel="noopener">
+          <span class="cn-text">{{ slide.desc_cn }}</span>
+          <span class="en-text">{{ slide.desc_en }}</span>
+        </a>
+      </p>
+      {% else %}
+      <p>
+        <span class="cn-text">{{ slide.desc_cn }}</span>
+        <span class="en-text">{{ slide.desc_en }}</span>
+      </p>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+
+  <div class="hs-dots">
+    {% for slide in site.data.slides.slides %}
+    <button {% if forloop.first %}class="active"{% endif %}
+            aria-label="Slide {{ forloop.index }}"></button>
+    {% endfor %}
+  </div>
+
+</div>

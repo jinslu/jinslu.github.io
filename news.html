@@ -1,0 +1,121 @@
+---
+layout: default
+title: "新闻动态 / News"
+permalink: /news/
+---
+
+<div id="page-wrap" class="no-sidebar">
+<div class="main-col">
+
+  <div class="section-title" style="margin-bottom:28px">
+    <span class="dot"></span>
+    <h2><span class="cn-text">新闻动态</span><span class="en-text">News &amp; Updates</span></h2>
+  </div>
+
+  <!-- Year filter -->
+  <div class="pub-filters" style="margin-bottom:28px;">
+    <button class="pub-filter-btn active" onclick="filterNews('all',this)">
+      <span class="cn-text">全部</span><span class="en-text">All</span>
+    </button>
+    <button class="pub-filter-btn" onclick="filterNews('pub',this)">
+      <span class="cn-text">论文发表</span><span class="en-text">Publications</span>
+    </button>
+    <button class="pub-filter-btn" onclick="filterNews('award',this)">
+      <span class="cn-text">获奖荣誉</span><span class="en-text">Awards</span>
+    </button>
+    <button class="pub-filter-btn" onclick="filterNews('conf',this)">
+      <span class="cn-text">会议报告</span><span class="en-text">Conferences</span>
+    </button>
+    <button class="pub-filter-btn" onclick="filterNews('recruit',this)">
+      <span class="cn-text">招生信息</span><span class="en-text">Recruitment</span>
+    </button>
+    <button class="pub-filter-btn" onclick="filterNews('lab',this)">
+      <span class="cn-text">实验室动态</span><span class="en-text">Lab News</span>
+    </button>
+  </div>
+
+  <div style="background:var(--bg-card);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:8px 28px;">
+    <ul class="news-list" id="news-container">
+
+      <li data-cat="recruit">
+        <div class="news-date"><span class="nd-month">May</span><span class="nd-day">27</span><span class="nd-year">2026</span></div>
+        <div class="news-content">
+          <span class="nc-tag cn-text">招生</span><span class="nc-tag en-text">Recruitment</span>
+          <p>
+            <span class="cn-text">课题组2026年秋季诚招博士研究生2名及博士后1名，欢迎对集成光子学、超构光子学方向感兴趣的同学发邮件联系：jinslu[at]whu.edu.cn</span>
+            <span class="en-text">We are recruiting 2 PhD students and 1 postdoc for Fall 2026. Candidates interested in integrated photonics or meta-photonics, please email: jinslu[at]whu.edu.cn</span>
+          </p>
+        </div>
+      </li>
+
+      <li data-cat="pub">
+        <div class="news-date"><span class="nd-month">May</span><span class="nd-day">9</span><span class="nd-year">2026</span></div>
+        <div class="news-content">
+          <span class="nc-tag cn-text">预印本</span><span class="nc-tag en-text">Preprint</span>
+          <p>
+            <span class="cn-text">课题组关于纳米光子学中拉曼抑制的最新研究成果以预印本形式发布于 arXiv。</span>
+            <span class="en-text">New preprint on Raman suppression in nanophotonics posted on arXiv.</span>
+          </p>
+        </div>
+      </li>
+
+      <li data-cat="pub">
+        <div class="news-date"><span class="nd-month">Mar</span><span class="nd-day">13</span><span class="nd-year">2026</span></div>
+        <div class="news-content">
+          <span class="nc-tag cn-text">论文发表</span><span class="nc-tag en-text">Publication</span>
+          <p>
+            <span class="cn-text">课题组关于多模单环光子分子的最新研究成果在 <em>Physical Review Letters</em> 发表。</span>
+            <span class="en-text">New paper on Multimode Single-Ring Photonic Molecule published in <em>Physical Review Letters</em>.</span>
+          </p>
+        </div>
+      </li>
+
+      <li data-cat="lab">
+        <div class="news-date"><span class="nd-month">Jan</span><span class="nd-day">1</span><span class="nd-year">2026</span></div>
+        <div class="news-content">
+          <span class="nc-tag cn-text">实验室动态</span><span class="nc-tag en-text">Lab News</span>
+          <p>
+            <span class="cn-text">卢锦胜于2026年1月1日正式入职武汉大学，集成与超构光子芯片实验室宣告成立。</span>
+            <span class="en-text">Jinsheng Lu joined Wuhan University on January 1, 2026. The Integrated and Meta Photonics Lab is officially established.</span>
+          </p>
+        </div>
+      </li>
+
+      <li data-cat="conf">
+        <div class="news-date"><span class="nd-month">May</span><span class="nd-day">4</span><span class="nd-year">2025</span></div>
+        <div class="news-content">
+          <span class="nc-tag cn-text">会议报告</span><span class="nc-tag en-text">Conference</span>
+          <p>
+            <span class="cn-text">卢锦胜教授在 CLEO 2025 会议上作学术报告，介绍级联模式干涉仪的相关研究工作。</span>
+            <span class="en-text">Jinsheng Lu presented a talk on Cascaded Mode Interferometers at CLEO 2025.</span>
+          </p>
+        </div>
+      </li>
+
+      <li data-cat="pub">
+        <div class="news-date"><span class="nd-month">Mar</span><span class="nd-day">19</span><span class="nd-year">2025</span></div>
+        <div class="news-content">
+          <span class="nc-tag cn-text">论文发表</span><span class="nc-tag en-text">Publication</span>
+          <p>
+            <span class="cn-text">课题组关于级联模式干涉仪——光谱形状与线宽工程的研究成果在 <em>Science Advances</em> 发表。</span>
+            <span class="en-text">New paper on Cascaded-mode interferometers: spectral shape and linewidth engineering published in <em>Science Advances</em>.</span>
+          </p>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+</div>
+</div>
+
+<script>
+function filterNews(cat, btn) {
+  document.querySelectorAll('.pub-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#news-container li').forEach(li => {
+    if (cat === 'all') { li.style.display = ''; return; }
+    li.style.display = li.dataset.cat === cat ? '' : 'none';
+  });
+}
+</script>

@@ -1,0 +1,10 @@
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+*.zip
+Gemfile.lock
+.DS_Store
+.bundle/
+.claude/
+vendor/
