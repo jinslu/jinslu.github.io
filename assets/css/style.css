@@ -1161,10 +1161,7 @@ a:hover { color: var(--blue-light); }
 .rc-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
 .rc-tag {
   font-size: 0.68rem;
-  background: var(--border-light);
-  color: var(--navy-mid);
-  padding: 2px 9px;
-  border-radius: 8px;
+  color: var(--text-light);
 }
 .rc-papers { margin-top: 10px; display: flex; flex-direction: column; gap: 3px; }
 .rc-papers a {
