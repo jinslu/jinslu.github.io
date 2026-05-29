@@ -11,33 +11,59 @@ cd "$SITE_DIR"
 LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 bundle exec jekyll build \
   --config _config.yml,_config.boda.yml
 
-# ── 生成博达模板 JSP 文件 ──────────────────────────────────────────
-echo "→ 生成博达模板 JSP 文件..."
-PAGES=(research publications members news contact join)
-cp "$SITE_DIR/_site/index.html" "$SITE_DIR/_site/index.jsp"
-echo "  + index.jsp"
-for page in "${PAGES[@]}"; do
-  cp "$SITE_DIR/_site/$page/index.html" "$SITE_DIR/_site/$page.jsp"
-  echo "  + $page.jsp"
-done
+# ── 生成博达静态 HTML 文件（修正内部链接）──────────────────────────
+echo "→ 生成博达静态 HTML 文件..."
+python3 << 'PYEOF'
+import os
+
+SITE = os.path.join(os.environ.get("SITE_DIR", "."), "_site")
+PAGES = ["research", "publications", "members", "news", "contact", "join"]
+
+def fix_links(html):
+    for page in PAGES:
+        html = html.replace(f'href="/{page}/"', f'href="/{page}.html"')
+        html = html.replace(f'href="/{page}/#', f'href="/{page}.html#')
+    return html
+
+# 修正 index.html 中的内部链接
+index_path = os.path.join(SITE, "index.html")
+with open(index_path, "r", encoding="utf-8") as f:
+    content = f.read()
+with open(index_path, "w", encoding="utf-8") as f:
+    f.write(fix_links(content))
+print("  ✓ index.html (链接已修正)")
+
+# 生成各栏目的 flat HTML 文件
+for page in PAGES:
+    src = os.path.join(SITE, page, "index.html")
+    dst = os.path.join(SITE, f"{page}.html")
+    with open(src, "r", encoding="utf-8") as f:
+        content = f.read()
+    with open(dst, "w", encoding="utf-8") as f:
+        f.write(fix_links(content))
+    print(f"  + {page}.html")
+PYEOF
 
 echo ""
 echo "✓ 完成！_site/ 目录已就绪，可直接上传到博达。"
 echo ""
-echo "  ┌─ 博达上传指南 ──────────────────────────────────────────────┐"
-echo "  │ 【模板（每次更新页面内容时）】                               │"
-echo "  │   新建/更新模板 → 选用本地HTML源文件：                       │"
-echo "  │     首页       : _site/index.html      → 模板名 index       │"
-echo "  │     研究方向   : _site/research/index.html  → research      │"
-echo "  │     发表论文   : _site/publications/index.html → publications│"
-echo "  │     课题组成员 : _site/members/index.html   → members       │"
-echo "  │     新闻动态   : _site/news/index.html      → news          │"
-echo "  │     联系我们   : _site/contact/index.html   → contact       │"
-echo "  │     招生信息   : _site/join/index.html      → join          │"
-echo "  │                                                              │"
-echo "  │ 【静态资源（首次或资源有变动时）】                            │"
-echo "  │   文件|模板 → 批量上传：                                     │"
-echo "  │     CSS/JS : _site/assets/       → 上传到 assets/           │"
-echo "  │     图片   : _site/user_data/images/ → 上传到 user_data/images/│"
-echo "  │     PDF    : _site/user_data/pdf/    → 上传到 user_data/pdf/ │"
-echo "  └──────────────────────────────────────────────────────────────┘"
+echo "  ┌─ 博达上传指南 ──────────────────────────────────────────────────┐"
+echo "  │ 【首页模板（每次更新内容时）】                                   │"
+echo "  │   文件|模板 → 新建/更新模板 → 选用本地HTML源文件：               │"
+echo "  │     首页 : _site/index.html → 模板名 index                      │"
+echo "  │                                                                  │"
+echo "  │ 【其他页面（静态文件，每次更新内容时）】                          │"
+echo "  │   文件|模板 → 上传文件（直接上传到根目录）：                      │"
+echo "  │     _site/research.html                                          │"
+echo "  │     _site/publications.html                                      │"
+echo "  │     _site/members.html                                           │"
+echo "  │     _site/news.html                                              │"
+echo "  │     _site/contact.html                                           │"
+echo "  │     _site/join.html                                              │"
+echo "  │                                                                  │"
+echo "  │ 【静态资源（首次或资源有变动时）】                                │"
+echo "  │   文件|模板 → 批量上传：                                         │"
+echo "  │     CSS/JS : _site/assets/          → 上传到 assets/            │"
+echo "  │     图片   : _site/user_data/images/ → 上传到 user_data/images/ │"
+echo "  │     PDF    : _site/user_data/pdf/    → 上传到 user_data/pdf/    │"
+echo "  └──────────────────────────────────────────────────────────────────┘"

@@ -995,15 +995,16 @@ a:hover { color: var(--blue-light); }
    FOOTER
 ================================================================ */
 #site-footer {
-  background: #2a527a;
-  color: rgba(255,255,255,0.65);
+  background: transparent;
+  color: var(--text-mid);
   padding: 12px 32px;
   text-align: center;
   font-size: 0.8rem;
   line-height: 2;
+  border-top: 1px solid var(--border);
 }
-#site-footer a { color: var(--gold-light); }
-#site-footer strong { color: rgba(255,255,255,0.9); }
+#site-footer a { color: var(--blue); }
+#site-footer strong { color: var(--navy); }
 
 /* ================================================================
    UTILITIES
@@ -1114,6 +1115,7 @@ a:hover { color: var(--blue-light); }
   .banner-title.en-text { font-size: 1.2rem; }
   .banner-inner { padding: 14px 16px; }
   .banner-lablogo-img { display: none; }
+  .banner-slogan-img { display: none; }
   .nav-lablogo { height: 26px; }
   .side-col { grid-template-columns: 1fr; }
   #page-wrap { padding: 16px 14px 36px; }
