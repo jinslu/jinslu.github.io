@@ -592,12 +592,12 @@ a:hover { color: var(--blue-light); }
   transform: translateY(-3px);
 }
 .member-photo {
-  width: 110px;
-  height: 110px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   margin: 0 auto 12px;
   background: linear-gradient(135deg, var(--border) 0%, var(--border-light) 100%);
-  border: 2px solid var(--border);
+  border: none;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -1609,7 +1609,7 @@ a:hover { color: var(--blue-light); }
 .member-photo {
   position: relative;
   overflow: hidden;
-  background: var(--border-light);
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
