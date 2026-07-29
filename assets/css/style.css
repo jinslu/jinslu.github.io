@@ -29,10 +29,10 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; font-size: 17px; }
+html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
-  font-family: 'Noto Sans SC', 'Source Serif 4', serif;
+  font-family: Arial, Helvetica, 'Noto Sans SC', sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.7;
@@ -41,7 +41,7 @@ body {
 
 /* ---- Typography ---- */
 h1, h2, h3, h4, h5 {
-  font-family: 'Noto Serif SC', 'EB Garamond', serif;
+  font-family: Arial, Helvetica, 'Noto Sans SC', sans-serif;
   line-height: 1.3;
   color: var(--navy);
   font-weight: 600;
@@ -177,7 +177,7 @@ a:hover { color: var(--blue-light); }
   font-weight: 400;
   cursor: pointer;
   transition: all var(--transition);
-  font-family: 'Noto Sans SC', sans-serif;
+  font-family: Arial, Helvetica, 'Noto Sans SC', sans-serif;
   letter-spacing: 0.05em;
   border-right: 1px solid var(--border);
 }
@@ -243,7 +243,7 @@ a:hover { color: var(--blue-light); }
 .nav-inner a {
   display: inline-block;
   padding: 14px 20px;
-  font-family: 'Noto Sans SC', sans-serif;
+  font-family: Arial, Helvetica, 'Noto Sans SC', sans-serif;
   font-size: 0.88rem;
   font-weight: 500;
   color: var(--text-mid);
@@ -367,7 +367,7 @@ a:hover { color: var(--blue-light); }
   padding: 3px 12px;
   border-radius: 20px;
   margin-bottom: 14px;
-  font-family: 'Noto Sans SC', sans-serif;
+  font-family: Arial, Helvetica, 'Noto Sans SC', sans-serif;
   letter-spacing: 0.05em;
 }
 .pi-bio {
@@ -388,7 +388,7 @@ a:hover { color: var(--blue-light); }
   font-size: 0.75rem;
   padding: 4px 12px;
   border-radius: 16px;
-  font-family: 'Noto Sans SC', sans-serif;
+  font-family: Arial, Helvetica, 'Noto Sans SC', sans-serif;
   letter-spacing: 0.03em;
 }
 .pi-contact {
@@ -532,7 +532,7 @@ a:hover { color: var(--blue-light); }
 }
 .stat-box .sb-num {
   display: block;
-  font-family: 'EB Garamond', serif;
+  font-family: Arial, Helvetica, 'Noto Sans SC', sans-serif;
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--blue);
@@ -605,7 +605,7 @@ a:hover { color: var(--blue-light); }
 }
 .member-photo img { width: 100%; height: 100%; object-fit: cover; }
 .member-photo .mp-initials {
-  font-family: 'EB Garamond', serif;
+  font-family: Arial, Helvetica, 'Noto Sans SC', sans-serif;
   font-size: 1.4rem;
   color: var(--text-light);
 }
@@ -613,7 +613,7 @@ a:hover { color: var(--blue-light); }
 .member-card .mc-role {
   font-size: 0.75rem;
   color: var(--blue);
-  font-family: 'Noto Sans SC', sans-serif;
+  font-family: Arial, Helvetica, 'Noto Sans SC', sans-serif;
   margin-bottom: 6px;
 }
 .member-card .mc-research {
@@ -641,7 +641,7 @@ a:hover { color: var(--blue-light); }
   border-bottom: 3px solid transparent;
   margin-bottom: 0;
   padding: 10px 18px;
-  font-family: 'Noto Serif SC', 'EB Garamond', serif;
+  font-family: Arial, Helvetica, 'Noto Sans SC', sans-serif;
   font-size: 0.87rem;
   font-weight: 600;
   color: var(--text-light);
@@ -657,7 +657,7 @@ a:hover { color: var(--blue-light); }
 }
 .pub-year-group { margin-bottom: 32px; }
 .pub-year-label {
-  font-family: 'EB Garamond', serif;
+  font-family: Arial, Helvetica, 'Noto Sans SC', sans-serif;
   font-size: 1.6rem;
   color: var(--gold);
   font-weight: 600;
@@ -694,7 +694,7 @@ a:hover { color: var(--blue-light); }
   min-width: 40px;
   color: var(--navy);
   font-size: 0.86rem;
-  font-family: 'EB Garamond', serif;
+  font-family: Arial, Helvetica, 'Noto Sans SC', sans-serif;
   font-weight: 600;
   line-height: 1.5;
   margin-top: 1px;
@@ -754,7 +754,7 @@ a:hover { color: var(--blue-light); }
   color: var(--blue);
   background: none;
   cursor: pointer;
-  font-family: 'Noto Sans SC', sans-serif;
+  font-family: Arial, Helvetica, 'Noto Sans SC', sans-serif;
   font-weight: 500;
   letter-spacing: 0.03em;
   transition: opacity 0.15s;
@@ -835,7 +835,7 @@ a:hover { color: var(--blue-light); }
   color: var(--navy-mid);
   padding: 3px 10px;
   border-radius: 12px;
-  font-family: 'Noto Sans SC', sans-serif;
+  font-family: Arial, Helvetica, 'Noto Sans SC', sans-serif;
 }
 .rt-gallery {
   margin: 20px 0 18px;
@@ -1016,7 +1016,7 @@ a:hover { color: var(--blue-light); }
   padding: 8px 22px;
   border-radius: 4px;
   font-size: 0.85rem;
-  font-family: 'Noto Sans SC', sans-serif;
+  font-family: Arial, Helvetica, 'Noto Sans SC', sans-serif;
   transition: all var(--transition);
   border: none;
   cursor: pointer;
@@ -1151,7 +1151,7 @@ a:hover { color: var(--blue-light); }
   z-index: 5;
 }
 .hs-caption h2 {
-  font-family: 'EB Garamond', 'Noto Serif SC', serif;
+  font-family: Arial, Helvetica, 'Noto Sans SC', sans-serif;
   font-size: 1.3rem;
   font-weight: 600;
   color: #fff;
@@ -1222,7 +1222,7 @@ a:hover { color: var(--blue-light); }
 .home-rc-img svg { width: 100%; height: 100%; display: block; }
 .home-rc-body { padding: 18px 20px 22px; }
 .home-rc-body h3 {
-  font-family: 'EB Garamond', 'Noto Serif SC', serif;
+  font-family: Arial, Helvetica, 'Noto Sans SC', sans-serif;
   font-size: 1rem;
   color: var(--navy);
   margin-bottom: 6px;
@@ -1320,7 +1320,7 @@ a:hover { color: var(--blue-light); }
 .pub-num.reverse { color: var(--gold); }
 
 .pub-section-title {
-  font-family: 'EB Garamond', 'Noto Serif SC', serif;
+  font-family: Arial, Helvetica, 'Noto Sans SC', sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--gold);
@@ -1429,7 +1429,7 @@ a:hover { color: var(--blue-light); }
   border-bottom: 3px solid transparent;
   margin-bottom: 0;
   padding: 10px 22px;
-  font-family: 'Noto Serif SC', 'EB Garamond', serif;
+  font-family: Arial, Helvetica, 'Noto Sans SC', sans-serif;
   font-size: 0.87rem;
   font-weight: 600;
   color: var(--text-light);
@@ -1496,7 +1496,7 @@ a:hover { color: var(--blue-light); }
 }
 
 .pyf-title {
-  font-family: 'Noto Serif SC', 'EB Garamond', serif;
+  font-family: Arial, Helvetica, 'Noto Sans SC', sans-serif;
   font-size: 0.78rem;
   font-weight: 600;
   color: var(--text-light);
