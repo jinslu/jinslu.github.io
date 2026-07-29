@@ -1557,6 +1557,7 @@ a:hover { color: var(--blue-light); }
   border-radius: var(--radius);
   padding: 7px 10px;
   font-size: 0.875rem;
+  font-weight: 400;
   color: var(--text-mid);
   text-align: center;
   white-space: normal;
@@ -1575,7 +1576,6 @@ a:hover { color: var(--blue-light); }
   background: var(--navy);
   color: #fff;
   border-color: var(--navy);
-  font-weight: 600;
 }
 @media (max-width: 768px) {
   .side-col .rst-btn,
