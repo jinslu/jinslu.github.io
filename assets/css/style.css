@@ -319,7 +319,7 @@ a:hover { color: var(--blue-light); }
   border-bottom: 1px solid var(--border);
 }
 .section-title h2 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: var(--navy);
 }
 .section-title .dot { display: none; }
@@ -512,7 +512,7 @@ a:hover { color: var(--blue-light); }
   margin-bottom: 20px;
 }
 .sidebar-card h3 {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   margin-bottom: 14px;
   color: var(--navy);
   padding-bottom: 10px;
@@ -568,7 +568,7 @@ a:hover { color: var(--blue-light); }
 ================================================================ */
 .members-section { margin-bottom: 36px; }
 .members-section h3 {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   color: var(--navy-mid);
   margin-bottom: 16px;
   padding: 8px 0;
@@ -610,7 +610,7 @@ a:hover { color: var(--blue-light); }
   font-size: 1.4rem;
   color: var(--text-light);
 }
-.member-card h4 { font-size: 1.05rem; margin-bottom: 4px; }
+.member-card h4 { font-size: 1.2rem; margin-bottom: 4px; }
 .member-card .mc-role {
   font-size: 0.75rem;
   color: var(--blue);
@@ -812,7 +812,7 @@ a:hover { color: var(--blue-light); }
   box-shadow: var(--shadow-sm);
 }
 .research-topic h3 {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   margin-bottom: 12px;
   display: flex;
   align-items: center;
@@ -938,7 +938,7 @@ a:hover { color: var(--blue-light); }
   margin-bottom: 20px;
   box-shadow: var(--shadow-sm);
 }
-.join-section h3 { font-size: 1.05rem; margin-bottom: 14px; }
+.join-section h3 { font-size: 1.2rem; margin-bottom: 14px; }
 .join-section ul {
   padding-left: 1.4em;
   color: var(--text-mid);
@@ -1153,7 +1153,7 @@ a:hover { color: var(--blue-light); }
 }
 .hs-caption h2 {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #fff;
   margin-bottom: 4px;
@@ -1224,7 +1224,7 @@ a:hover { color: var(--blue-light); }
 .home-rc-body { padding: 18px 20px 22px; }
 .home-rc-body h3 {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   color: var(--navy);
   margin-bottom: 6px;
   font-weight: 600;
@@ -1264,7 +1264,7 @@ a:hover { color: var(--blue-light); }
   border-top: 1px solid var(--border);
 }
 .photo-wall-section h3 {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   color: var(--navy);
   margin-bottom: 16px;
   padding: 6px 0;
@@ -1322,7 +1322,7 @@ a:hover { color: var(--blue-light); }
 
 .pub-section-title {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--gold);
   border-bottom: 1px solid var(--border);
@@ -1471,7 +1471,7 @@ a:hover { color: var(--blue-light); }
   transform: translateY(-2px);
 }
 .ov-card h4 {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   color: var(--navy);
   margin-bottom: 8px;
 }
@@ -1544,6 +1544,42 @@ a:hover { color: var(--blue-light); }
     margin-bottom: 20px;
   }
   .pyf-btn { width: auto; }
+}
+
+/* ── Research subnav & News filter when placed in sidebar ── */
+.side-col .rst-btn,
+.side-col .pub-filter-btn {
+  display: block;
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-bottom-width: 1px;
+  border-radius: var(--radius);
+  padding: 7px 10px;
+  font-size: 0.875rem;
+  color: var(--text-mid);
+  text-align: center;
+  white-space: normal;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+.side-col .rst-btn:hover,
+.side-col .pub-filter-btn:hover {
+  background: var(--border-light);
+  color: var(--navy);
+  border-color: var(--border);
+}
+.side-col .rst-btn.active,
+.side-col .pub-filter-btn.active {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .side-col .rst-btn,
+  .side-col .pub-filter-btn { width: auto; }
 }
 
 /* Collaborators list */

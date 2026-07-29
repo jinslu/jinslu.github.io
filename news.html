@@ -4,32 +4,10 @@ title: "新闻动态 / News"
 permalink: /news/
 ---
 
-<div id="page-wrap" class="no-sidebar" style="padding-top:16px;">
+<div id="page-wrap" class="has-year-filter" style="padding-top:16px;">
 <div class="main-col">
 
-  <!-- Category filter -->
-  <div class="pub-filters" style="margin-top:8px;">
-    <button class="pub-filter-btn active" onclick="filterNews('all',this)">
-      <span class="cn-text">全部</span><span class="en-text">All</span>
-    </button>
-    <button class="pub-filter-btn" onclick="filterNews('pub',this)">
-      <span class="cn-text">论文发表</span><span class="en-text">Publications</span>
-    </button>
-    <button class="pub-filter-btn" onclick="filterNews('award',this)">
-      <span class="cn-text">获奖荣誉</span><span class="en-text">Awards</span>
-    </button>
-    <button class="pub-filter-btn" onclick="filterNews('conf',this)">
-      <span class="cn-text">会议报告</span><span class="en-text">Conferences</span>
-    </button>
-    <button class="pub-filter-btn" onclick="filterNews('recruit',this)">
-      <span class="cn-text">招生信息</span><span class="en-text">Recruitment</span>
-    </button>
-    <button class="pub-filter-btn" onclick="filterNews('lab',this)">
-      <span class="cn-text">实验室动态</span><span class="en-text">Lab News</span>
-    </button>
-  </div>
-
-  <div style="background:var(--bg-card);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:8px 28px;">
+  <div style="background:var(--bg-card);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:8px 28px;margin-top:8px;">
     <ul class="news-list" id="news-container">
 
       <li data-cat="recruit">
@@ -101,8 +79,32 @@ permalink: /news/
     </ul>
   </div>
 
+</div><!-- end main-col -->
+
+<div class="side-col">
+  <div class="pyf-wrap">
+    <button class="pub-filter-btn active" onclick="filterNews('all',this)">
+      <span class="cn-text">全部</span><span class="en-text">All</span>
+    </button>
+    <button class="pub-filter-btn" onclick="filterNews('pub',this)">
+      <span class="cn-text">论文发表</span><span class="en-text">Publications</span>
+    </button>
+    <button class="pub-filter-btn" onclick="filterNews('award',this)">
+      <span class="cn-text">获奖荣誉</span><span class="en-text">Awards</span>
+    </button>
+    <button class="pub-filter-btn" onclick="filterNews('conf',this)">
+      <span class="cn-text">会议报告</span><span class="en-text">Conferences</span>
+    </button>
+    <button class="pub-filter-btn" onclick="filterNews('recruit',this)">
+      <span class="cn-text">招生信息</span><span class="en-text">Recruitment</span>
+    </button>
+    <button class="pub-filter-btn" onclick="filterNews('lab',this)">
+      <span class="cn-text">实验室动态</span><span class="en-text">Lab News</span>
+    </button>
+  </div>
 </div>
-</div>
+
+</div><!-- end page-wrap -->
 
 <script>
 function filterNews(cat, btn) {
