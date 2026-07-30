@@ -47,7 +47,7 @@ PYEOF
 # ── 清理博达不需要的文件 ─────────────────────────────────────────
 echo "→ 清理多余文件..."
 rm -f  _boda/CNAME _boda/README.md _boda/feed.xml _boda/boda-upload.zip
-rm -rf _boda/scripts _boda/wiki
+rm -rf _boda/scripts _boda/wiki _boda/user_data
 for page in research publications members news contact join; do
   rm -rf "_boda/$page"
 done
@@ -72,7 +72,7 @@ echo "  │     _boda/join.html                                              │
 echo "  │                                                                  │"
 echo "  │ 【静态资源（首次或资源有变动时）】                                │"
 echo "  │   文件|模板 → 批量上传：                                         │"
-echo "  │     CSS/JS : _boda/assets/          → 上传到 assets/            │"
-echo "  │     图片   : _boda/user_data/images/ → 上传到 user_data/images/ │"
-echo "  │     PDF    : _boda/user_data/pdf/    → 上传到 user_data/pdf/    │"
+echo "  │     CSS/JS : _boda/assets/           → 上传到 assets/           │"
+echo "  │     图片   : user_data/images/        → 上传到 user_data/images/ │"
+echo "  │     PDF    : user_data/pdf/           → 上传到 user_data/pdf/   │"
 echo "  └──────────────────────────────────────────────────────────────────┘"
