@@ -1,6 +1,25 @@
 {
   "articles": [
     {
+      "key": "Lu2026arXiv",
+      "year": 2026,
+      "title": "Resonance-Induced Sign Reversal of Optical Gradient Forces and Three-Dimensional Singularity Trapping",
+      "summary": "We demonstrate that sweeping the wavelength through a resonance induces a phase shift that reverses optical gradient forces from attractive to repulsive. Using a generalized Fano line-shape framework, we establish a unified analytical model applicable across diverse resonant systems and demonstrate three-dimensional trapping of silicon nanoparticles with counter-propagating vector beams.",
+      "author": "Jinsheng Lu, Soon Wei Daniel Lim, Federico Capasso*",
+      "doi": "",
+      "url": "https://arxiv.org/abs/2607.25303",
+      "file": "",
+      "news": "",
+      "editors_suggestion": false,
+      "featured_in_physics": false,
+      "cover": "",
+      "journal": "arXiv preprint",
+      "volume": "",
+      "number": "",
+      "pages": "arXiv:2607.25303",
+      "num": 24
+    },
+    {
       "key": "Song2026arXiv",
       "year": 2026,
       "title": "Raman suppression in nanophotonics enabled by multimode spectral filtering",
