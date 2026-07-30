@@ -1,7 +1,7 @@
 #!/bin/bash
 # 构建博达平台版本（lu.whu.edu.cn）
 # 用法：bash scripts/build-boda.sh
-# 构建完成后直接从 _site/ 目录上传文件到博达，无需打包。
+# 构建完成后直接从 _boda/ 目录上传文件到博达，无需打包。
 
 set -e
 SITE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
@@ -16,7 +16,7 @@ echo "→ 生成博达静态 HTML 文件..."
 python3 << 'PYEOF'
 import os
 
-SITE = os.path.join(os.environ.get("SITE_DIR", "."), "_site")
+SITE = os.path.join(os.environ.get("SITE_DIR", "."), "_boda")
 PAGES = ["research", "publications", "members", "news", "contact", "join"]
 
 def fix_links(html):
@@ -45,25 +45,25 @@ for page in PAGES:
 PYEOF
 
 echo ""
-echo "✓ 完成！_site/ 目录已就绪，可直接上传到博达。"
+echo "✓ 完成！_boda/ 目录已就绪，可直接上传到博达。"
 echo ""
 echo "  ┌─ 博达上传指南 ──────────────────────────────────────────────────┐"
 echo "  │ 【首页模板（每次更新内容时）】                                   │"
 echo "  │   文件|模板 → 新建/更新模板 → 选用本地HTML源文件：               │"
-echo "  │     首页 : _site/index.html → 模板名 index                      │"
+echo "  │     首页 : _boda/index.html → 模板名 index                      │"
 echo "  │                                                                  │"
 echo "  │ 【其他页面（静态文件，每次更新内容时）】                          │"
 echo "  │   文件|模板 → 上传文件（直接上传到根目录）：                      │"
-echo "  │     _site/research.html                                          │"
-echo "  │     _site/publications.html                                      │"
-echo "  │     _site/members.html                                           │"
-echo "  │     _site/news.html                                              │"
-echo "  │     _site/contact.html                                           │"
-echo "  │     _site/join.html                                              │"
+echo "  │     _boda/research.html                                          │"
+echo "  │     _boda/publications.html                                      │"
+echo "  │     _boda/members.html                                           │"
+echo "  │     _boda/news.html                                              │"
+echo "  │     _boda/contact.html                                           │"
+echo "  │     _boda/join.html                                              │"
 echo "  │                                                                  │"
 echo "  │ 【静态资源（首次或资源有变动时）】                                │"
 echo "  │   文件|模板 → 批量上传：                                         │"
-echo "  │     CSS/JS : _site/assets/          → 上传到 assets/            │"
-echo "  │     图片   : _site/user_data/images/ → 上传到 user_data/images/ │"
-echo "  │     PDF    : _site/user_data/pdf/    → 上传到 user_data/pdf/    │"
+echo "  │     CSS/JS : _boda/assets/          → 上传到 assets/            │"
+echo "  │     图片   : _boda/user_data/images/ → 上传到 user_data/images/ │"
+echo "  │     PDF    : _boda/user_data/pdf/    → 上传到 user_data/pdf/    │"
 echo "  └──────────────────────────────────────────────────────────────────┘"
