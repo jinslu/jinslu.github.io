@@ -44,6 +44,15 @@ for page in PAGES:
     print(f"  + {page}.html")
 PYEOF
 
+# ── 清理博达不需要的文件 ─────────────────────────────────────────
+echo "→ 清理多余文件..."
+rm -f  _boda/CNAME _boda/README.md _boda/feed.xml _boda/boda-upload.zip
+rm -rf _boda/scripts _boda/wiki
+for page in research publications members news contact join; do
+  rm -rf "_boda/$page"
+done
+echo "  ✓ 完成"
+
 echo ""
 echo "✓ 完成！_boda/ 目录已就绪，可直接上传到博达。"
 echo ""
