@@ -1,22 +1,20 @@
 #!/usr/bin/env python3
 """
 bib2data.py — 将 user_data/bib/jinsheng.bib 转换为 _data/publications.json
-              并将 user_data/slides.yml 同步到 _data/slides.yml
 
 使用方法 / Usage:
-    python3 _scripts/bib2data.py
+    python3 scripts/bib2data.py
 
-每次更新 jinsheng.bib 或 slides.yml 后运行一次，然后 git push。
+每次更新 jinsheng.bib 后运行一次，然后 git push。
+幻灯片配置请直接编辑 _data/slides.yml。
 """
-import re, json, os, sys, shutil
+import re, json, os, sys
 
 # ── 路径配置 ─────────────────────────────────────────────────────
 REPO        = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BIB_PATH    = os.path.join(REPO, 'user_data', 'bib', 'jinsheng.bib')
-SLIDES_SRC  = os.path.join(REPO, 'user_data', 'slides.yml')
 DATA_DIR    = os.path.join(REPO, '_data')
 PUB_OUT     = os.path.join(DATA_DIR, 'publications.json')
-SLIDES_DST  = os.path.join(DATA_DIR, 'slides.yml')
 PDF_URL     = '/user_data/pdf'   # web path for PDF links
 
 
@@ -146,13 +144,6 @@ if __name__ == '__main__':
         print(f'✓ 论文数据已生成：_data/publications.json')
         print(f'  期刊论文 {output["total_articles"]} 篇 | '
               f'会议论文 {output["total_conferences"]} 篇')
-
-    # 2. 同步 slides.yml → _data/slides.yml
-    if not os.path.exists(SLIDES_SRC):
-        errors.append(f'未找到幻灯片配置：{SLIDES_SRC}')
-    else:
-        shutil.copy2(SLIDES_SRC, SLIDES_DST)
-        print(f'✓ 幻灯片配置已同步：_data/slides.yml')
 
     if errors:
         print('\n警告：')
