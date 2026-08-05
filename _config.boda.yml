@@ -2,3 +2,4 @@
 # 构建命令：bundle exec jekyll build --config _config.yml,_config.boda.yml
 url: "https://lu.whu.edu.cn"
 destination: _boda
+default_lang: cn

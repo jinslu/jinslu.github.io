@@ -12,7 +12,7 @@
   const btnCn  = document.getElementById('lang-btn-cn');
   const STORAGE_KEY = 'imp-lab-session-lang';
 
-  let currentLang = sessionStorage.getItem(STORAGE_KEY) || 'en';
+  let currentLang = sessionStorage.getItem(STORAGE_KEY) || root.getAttribute('data-lang') || 'en';
 
   function applyLang(lang) {
     currentLang = lang;

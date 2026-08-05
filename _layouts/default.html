@@ -8,7 +8,8 @@
   <script>
     (function () {
       try {
-        var lang = sessionStorage.getItem('imp-lab-session-lang') || 'en';
+        var _default = '{{ site.default_lang | default: "en" }}';
+        var lang = sessionStorage.getItem('imp-lab-session-lang') || _default;
         if (lang !== 'cn') lang = 'en';
         document.documentElement.setAttribute('data-lang', lang);
         document.documentElement.setAttribute('lang', lang === 'cn' ? 'zh-CN' : 'en');
